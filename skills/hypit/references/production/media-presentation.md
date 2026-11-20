@@ -12,9 +12,9 @@ With the named assets, Timeline, Canvas, Frames and Recipes declared:
 ```svml
 <import as="media-track" from="@hypit/media-track@1"/>
 <media-track:Track id="evidence" timeline={program.timeline} canvas={canvas}>
-  <media-track:Item id="photo" image={product} extent={product-extent}
+  <media-track:Item id="photo" image={scene-image} extent={scene-extent}
     frame={detail-frame} during={story.selection.example} appearance={look.media.still}/>
-  <media-track:Item id="demo" media={demo-media.media}
+  <media-track:Item id="insert" media={insert-media.media}
     frame={detail-frame} during={story.selection.proof} appearance={look.media.clip}/>
 </media-track:Track>
 ```
@@ -69,7 +69,7 @@ Use a Sequence when content replaces content in one visual slot:
 ```svml
 <media-track:Track id="cards" timeline={program.timeline} canvas={canvas}>
   <media-track:Sequence id="steps" frame={card-frame} appearance={look.media.card}
-    until={story.selection.demo} until-boundary="end">
+    until={story.selection.reveal} until-boundary="end">
     <media-track:Member id="first" image={first-image} extent={card-extent}
       at={story.moment.first}/>
     <media-track:Member id="second" image={second-image} extent={card-extent}

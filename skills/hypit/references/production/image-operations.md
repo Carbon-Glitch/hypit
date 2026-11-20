@@ -74,10 +74,10 @@ Use Background Removal when the next composition needs a still subject without i
 ```svml
 <import as="remove" from="@hypit/background-removal@1"/>
 
-<remove:Background id="presenter-cutout" source={portrait.image}/>
+<remove:Background id="character-cutout" source={portrait.image}/>
 ```
 
-`{presenter-cutout.image}` is an image with transparency, ready for a Media Track, image composition,
+`{character-cutout.image}` is an image with transparency, ready for a Media Track, image composition,
 or another compatible consumer. The Runtime Profile chooses the Endpoint that performs the removal;
 the Source records only the requested visual relationship.
 

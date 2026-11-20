@@ -107,24 +107,24 @@ Clipping, border, padding, shadow and frame paint belong to the outer Frame. The
 Recipe uses `clip: frame` for a rectangular clip, `clip: rounded` with a pixel `radius` for rounded
 corners, or `clip: none` to show overflow. A radius takes effect with the rounded clip.
 
-Here is a circular presenter inset; the named Canvas, SemanticTake and imported namespaces are
+Here is a circular character inset; the named Canvas, SemanticTake and imported namespaces are
 already available:
 
 ```svml
-<space:AnchoredFrame id="presenter-frame" within={canvas}
+<space:AnchoredFrame id="character-frame" within={canvas}
   x="94%" y="94%" width="320px" height="320px" anchor="bottom-right"/>
 <time:Clock id="clock" frame-rate="30"/>
 <time:Timeline id="speech" clock={clock}>
   <time:Take source={opening.take}/>
 </time:Timeline>
-<performance:Style id="presenter-style" frame={presenter-frame} appearance={look.presenter}/>
-  <performance:Track id="presenter" timeline={speech.timeline} canvas={canvas}>
-    <performance:Use style={presenter-style} during="program"/>
+<performance:Style id="character-style" frame={character-frame} appearance={look.character}/>
+  <performance:Track id="character" timeline={speech.timeline} canvas={canvas}>
+    <performance:Use style={character-style} during="program"/>
   </performance:Track>
 ```
 
 ```svs
-look.presenter {
+look.character {
   stack-order: 20;
   fit: cover;
   clip: rounded;

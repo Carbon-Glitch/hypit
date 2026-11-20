@@ -1,7 +1,9 @@
 # Script and semantic time
 
-Read this when deciding the target wording, pronunciation, performable passages and the meanings
-that picture and sound should follow. It also covers measured delivery and wordless passages.
+Read this when an existing project uses the Script interface to serialize accepted dialogue and
+semantic time. The full target storyboard remains ordinary recreation's story/dialogue master;
+Script is derived for this interface, not a second writing task. This page covers pronunciation,
+measured delivery and wordless passages.
 [Script syntax](../production/script-syntax.md) owns the authoring forms;
 [Timing](../production/timing.md) owns their projection into the work.
 
@@ -12,7 +14,7 @@ the complete work, including pure MG with no Script.
 [Media preparation](../production/media.md) explains connecting actual footage to a Segment, and
 [Runs](../production/runs.md) explains targeting material and reusing produced Takes.
 
-## Script is the target's sole verbal authority
+## Script projects the accepted verbal content
 
 `<script>` contains the words the target video will say. It contains no reference timecodes, media,
 visual Style parameters, prompts, or provider decisions. Semantic word attributes such as
@@ -27,22 +29,9 @@ Choose Script structure from the thought being expressed and the performance car
 - **Dual Text** gives one authored unit separate display and pronunciation text;
 - `||` says that one on-screen **Caption Cue** hands off to the next after a complete Alignment Unit;
 - a **word attribute** gives a Caption family an authored role on one displayed word;
-- a **Selection** names the span of meaning an element serves, such as a demonstration covering an
-  explanation or a comparison held through a claim;
+- a **Selection** names the span of meaning an element serves, such as a reaction or evidence insert tied to the dialogue;
 - a **Moment** names an event such as an answer or verdict, where graphics, sound or effects can
   respond together. The component decides how the resulting state continues.
-
-```svml
-<script id="story">
-  <hook>
-    <HOST> @{claim!} I made the @{proof}<API | A P I> || work overnight.@{/proof}
-  </hook>
-</script>
-```
-
-Here the viewer reads `API` while the performance receives `A P I`. The pair is one indivisible
-Alignment Unit. `||` ends one on-screen Caption Cue after that unit and lets the next Cue begin with
-`work`; `proof` remains one semantic range, and `claim` is a semantic point that other layers can use.
 
 A Cue is a timed block of displayed speech, not a line of text. Its Caption family and Recipe may
 wrap that block over one or more lines, reveal or highlight its words, and give the block an entrance,
@@ -57,7 +46,7 @@ spacing, grouping and marker affinities. Use those forms to express the choices 
 
 ## Write the intended pronunciation
 
-Choose pronunciation while writing the Script. For coined names, unfamiliar brands and abbreviations
+Choose pronunciation while writing the Script. For coined names and abbreviations
 whose reading needs direction, use Dual Text to keep the intended display spelling and give the
 performer a clear spoken form. Write that form as readable words, syllables or letter names in the
 performed language. Familiar word sounds, phonetic respellings and homophones can make an unfamiliar
@@ -94,17 +83,6 @@ belong in performance direction when needed, not among the words the Script asks
 
 ### Carry the chosen reading through the work
 
-```svml
-<script id="story">
-  <opening>
-    <HOST> This app connects through an <API | A P I>.
-  </opening>
-  <closing>
-    <HOST> The same <API | A P I> works here too.
-  </closing>
-</script>
-```
-
 Each pair applies to that occurrence. Carry the chosen spoken form into every occurrence of the
 name, including other Segments, so separately generated performances receive the same direction.
 The right-hand wording reaches the model through the Segment's `.dialogue`; Caption keeps the
@@ -112,7 +90,7 @@ display spelling. Settle these readings before measuring the Script and requesti
 
 The same distinction helps Chinese copy express numbers and names clearly. For example,
 `今年<2026|二零二六>年` displays the year compactly while specifying how it is said;
-`只要<¥19.9|十九块九>` chooses a conversational price reading. Choose the spoken form for this
+Choose the spoken form for this
 sentence's meaning and delivery. Measuring the Segment with `--language zh` then uses that spoken
 wording, including the syllables hidden behind its compact numeric display. Caption retains the
 authored simplified or traditional characters; transcription supplies timing rather than rewriting
@@ -135,7 +113,7 @@ Script also represents passages without speech:
 </script>
 ```
 
-`empty` is an ordinary Segment name; a name such as `product-detail` can express the passage's role.
+`empty` is an ordinary Segment name; a name such as `evidence-detail` can express the passage's role.
 No words does not mean no semantics: the Segment retains its identity and start/end anchors. Its
 associated normalized media determines the duration, and its SemanticTake has an empty word array.
 The same Timeline and Track timing vocabulary apply to a wordless passage or an entire
@@ -145,9 +123,9 @@ needs no media-backed Segment. Spoken, wordless-media and graphics-only passages
 
 Choose Segment boundaries from natural production passages and delivery length, not from every
 picture cut. One Segment and Take can carry several speaking turns, camera cuts or a split-screen
-conversation. One continuous narration can carry many B-roll changes through Selections. Edited UGC
-can deliberately use several Takes driven by the same character-and-scene image; a natural cut is
-often part of its appeal. A Role change or `||` does not require another generation.
+conversation. Inner speech may continue over several narrative inserts through Selections.
+A drama scene can use several Takes with the same accepted character-and-scene references;
+cuts follow revelation, reaction and action rather than an arbitrary request quota. A Role change or `||` does not require another generation.
 When retained recorded speech carries the passage, a file cut changes that performed material but
 does not automatically create a Segment. Several retained stretches can form one passage; distinct
 passages can use separate Takes. Write the Script for the final performed words and align the
@@ -190,15 +168,14 @@ hypit measure --text "You expect me to type every coffee?" --language en --pace 
 hypit measure path/to/source.svml --segment opening --language zh --pace fast --rounding round
 ```
 
-Choose `--pace slow|normal|fast` from the intended delivery: conversational explanation may suit
-`normal`, while brisk, tightly cut social delivery often suits `fast`. The CLI prints the actual
+Choose `--pace slow|normal|fast` from the character's actual delivery. The CLI prints the actual
 units-per-second rate; `--rate` lets you choose it directly. Mandarin counts Han characters as
 approximate syllables and embedded English by syllable; English counts syllables rather than words.
-Set `--language zh` for Chinese copy, including copy with English product names, and measure the
+Set `--language zh` for Chinese copy, including dialogue with English names, and measure the
 pronunciation side of Dual Text with `--segment`.
 
 The density includes ordinary phrasing pauses. `--padding` reserves additional time for an intended
-reaction, demonstration or held pause. Keep related performances at a coherent delivery density. Initial
+reaction, action or held pause. Keep related performances at a coherent delivery density. Initial
 estimates can retain fractions with `--rounding none`. `ceil` rounds upward to a whole second, while
 `round` chooses the nearest one. Most video requests use whole seconds; choose the final literal with
 the selected model's supported values and the intended performance in mind.
@@ -208,13 +185,6 @@ pronunciation-unit count over its spoken passages to inform a candidate rate, th
 terminology and actions. Inspect the effective density after rounding each request: fitting every
 line into the shortest supported duration can make the whole delivery rushed. Keep the chosen rate
 and meaningful padding with the production's direction so later Segments follow the same decision.
-
-Let that estimate inform the shape of the passage. A short line may belong with the next response,
-benefit from a little fuller wording, or leave room for a meaningful action. A long passage may read
-better with tighter copy or a split at a natural change of thought. Preserve the intended meaning and
-energy while finding a performable shape, then measure the affected wording again. The
-[Generated video direction](../playbooks/craft/video-direction.md#size-the-request-around-the-delivery)
-applies this judgment to the selected model's request range.
 
 Measurement balances the intended speaking density and sizes generation; it supplies no timeline
 anchors. Once a Take is accepted, normalize it, align its actual speech to its Script Segment, and

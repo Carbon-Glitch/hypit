@@ -37,12 +37,12 @@ File declarations publish a **BlobArtifact**, a reference to the file's bytes, u
 ```svml
 <import as="asset" from="@hypit/media@1"/>
 
-<asset:Image id="product" src="./assets/product.png"/>
+<asset:Image id="scene-image" src="./assets/scene.png"/>
 <asset:Video id="performance" src="./assets/performance.mp4"/>
 <asset:Audio id="music" src="./assets/music.wav"/>
 ```
 
-Use `{product}`, `{performance}` and `{music}` as inputs that accept these BlobArtifacts. A model
+Use `{scene-image}`, `{performance}` and `{music}` as inputs that accept these BlobArtifacts. A model
 Surface can publish the same kind of value under an output path, such as `{portrait.image}` or
 `{opening.video}`. The package vocabulary gives that path. File paths are relative to their Source;
 [project setup](../creation/project-files.md#establish-the-project-boundary) explains the declared project boundaries.
@@ -171,7 +171,7 @@ time-bearing clip, use StillVideo:
 ```svml
 <import as="media" from="@hypit/media-pipeline@1"/>
 
-<media:StillVideo id="opening-still" source={product} duration="6" clock={clock}/>
+<media:StillVideo id="opening-still" source={scene-image} duration="6" clock={clock}/>
 <pipeline:Normalize id="opening-media" source={opening-still.video}
   video="primary-moving" audio="none" span-authority="video" clock={clock}/>
 ```
@@ -224,7 +224,7 @@ directly. Removing a still reference's background does not establish transparenc
 
 Choose an operation for the material it actually accepts: [image background removal](image-operations.md#remove-a-background)
 produces a still cutout; a moving silhouette needs a video matte or suitable keying operation.
-[Video direction](../playbooks/craft/video-direction.md#prepare-footage-for-subject-isolation) explains
+[Video direction](../playbooks/craft/video-direction.md#ground-actions-in-the-generated-scene) explains
 preparing and judging footage for that use. A fixed flattened arrangement of still images can use
 [Image Compose](image-operations.md#flatten-a-fixed-still-image-arrangement) when that is the desired output.
 

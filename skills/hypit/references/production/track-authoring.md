@@ -83,10 +83,6 @@ Document that meaning in the component. `preset` is the answer strip's package-o
 concept. An answer strip consumes an Instant for a reveal that persists, while Media consumes a
 Window for occupancy. Expose timing inputs whose consumption matches the behavior.
 
-The interview's project emoji strip illustrates this design: one outer Window, ordered answer
-items, a placeholder asset and one icon per answer. Each Moment changes its own slot. The Track does
-not decide when the spoken answer occurred; it consumes the already projected event.
-
 ## Use the Timeline's existing placement model
 
 The [Timeline](timeline.md) places intact prepared Takes at native speed. Sequential placement,
@@ -115,14 +111,8 @@ and any detector in their own execution or measurement boundary.
 Declare the new package in the project's `packages/` and ordinary package configuration. Read the
 installed `@hypit/hypit/author-kit` README for the public package boundary and inspect a close installed sibling for
 the relevant implementation, rather than depending on a monorepo example directory being present.
-`@hypit/interview-emoji-reveal` demonstrates persistent Moment-driven state; `@hypit/ranking`
-demonstrates reveal Windows and settled rows; `@hypit/media-track` demonstrates occupancy and Handoffs.
-
-Ranking provides a complete example in the installed Distribution. Its `packages/ranking/README.md`
-links the relevant files: `surface.ts` projects authored time, `fragment.ts` connects typed inputs,
-`schedule.ts` computes reveal and settled spans, `render.ts` draws them, and
-`packages/ranking-studio/src/index.ts` turns the same program into editor entities. Follow the part
-that answers the current question. A new component may use fewer operations or different state.
+`@hypit/media-track` demonstrates occupancy and Handoffs relevant to narrative
+inserts and overlays. Inspect only the installed component that answers the current question.
 
 The Surface exposes author intent and lowers its supported temporal forms through shared projection
 helpers such as `createTemporalWindowProjection` and `createTemporalInstantProjection`. The Fragment

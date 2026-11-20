@@ -1,4 +1,4 @@
 interface:
   display_name: "Hypit"
-  short_description: "Direct and deliver videos from references or briefs"
-  default_prompt: "Use $hypit to make or revise the video from my brief and any supplied references."
+  short_description: "Direct videos across formats, keeping local workflows"
+  default_prompt: "Use $hypit to make or revise my video from the brief and supplied material, choose the relevant format and craft, and retain my established creative and production settings."

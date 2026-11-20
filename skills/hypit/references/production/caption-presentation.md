@@ -12,9 +12,9 @@ text and pronunciation associations. Each Use selects a complete Style inside a 
 <caption:Hidden id="hidden"/>
 <caption-fine:Track id="captions" document={story.caption} timeline={program.timeline}>
   <caption-fine:Use style={base-style}/>
-  <caption-fine:Use role="GUEST" style={guest-style}/>
+  <caption-fine:Use role="CHARACTER" style={character-style}/>
   <caption-fine:Use during={story.selection.answer} style={answer-style}/>
-  <caption-fine:Use during={story.selection.demonstration} style={hidden}/>
+  <caption-fine:Use during={story.selection.reveal} style={hidden}/>
   <caption-fine:Use at={story.moment.key} for="2s" style={impact-style}/>
 </caption-fine:Track>
 ```
@@ -32,7 +32,7 @@ caption can use a project family with its own layout and behavior.
 | Start at a meaningful word, for a fixed duration | `at={story.moment.key} for="2s"` |
 | End at a meaningful event | `until={story.moment.key} for="12f"` |
 | Explicit window | `start="8s" end="10s"` |
-| A particular speaker | Add `role="GUEST"` to any of these |
+| A particular speaker | Add `role="CHARACTER"` to any of these |
 
 [Timing](timing.md) owns the shared expressions and semantic references.
 Use semantic boundaries when the treatment follows what is being said. Absolute times remain useful

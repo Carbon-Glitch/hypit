@@ -1,0 +1,33 @@
+subject_definitions:
+<Subject 1> is the woman in <Picture 1>, supplying her identity and current look.
+<Subject 2> is the man at the right of <Picture 2>, supplying his identity and current look.
+<Subject 3> is the gift box in <Picture 3>.
+<Subject 4> is the key shown beside the box in <Picture 3>.
+<Subject 5> is the room and table arrangement in <Picture 2>.
+<Audio 1> supplies the voice timbre of <Subject 1> (S1).
+<Audio 2> supplies the voice timbre of <Subject 2> (S2).
+
+summary:
+[reference generation + audio reference] In a twelve-second exchange, <Subject 1> opens <Subject 3>, finds <Subject 4>, and asks what it means. <Subject 2>'s answer turns her uncertainty into relief.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1], [Shot 2], [Shot 4]): fully_preserved - identity and current look.
+<Subject 2> (appears in [Shot 1], [Shot 2], [Shot 4]): fully_preserved - identity and current look.
+<Subject 3> (appears in all shots): fully_preserved - box construction and appearance; handling follows the action below.
+<Subject 4> (appears in [Shot 3], [Shot 4]): fully_preserved - key appearance; initially concealed inside the closed box.
+<Subject 5> (appears in all shots): fully_preserved - table geography, surfaces and window lighting.
+<Audio 1>: reference - voice timbre for <Subject 1>.
+<Audio 2>: reference - voice timbre for <Subject 2>.
+
+detailed_description:
+Photographic live action. Soft daylight from the room's window lights faces and hands as they turn; the opposite cheeks retain gentle, readable shadows. Shared views keep the woman left and the man right across the table.
+[Shot 1] A table-height medium two-shot includes both people and their hands in <Subject 5>. <Subject 2> finishes sliding the closed <Subject 3> toward <Subject 1> and withdraws his right hand beside his cup. Paper scrapes against the tabletop. She brings her left palm under the box and rests her right fingertips at the lid seam. Leaning forward, she checks his face, then looks down with a small expectant smile. He follows her hands with his eyes, rubbing his thumb once across his curled index finger before settling it. She draws the box nearer and catches the lid edge with her right thumb.
+[Shot 2] At 00:03.600, the camera cuts to a chest-up three-quarter view of <Subject 1>, with his near shoulder soft at the right edge. She lifts the lid toward herself; its raised surface shields the contents from this viewpoint. Dry paper friction accompanies the release. Her smile pauses as she looks inside, then her brows draw together and she raises her eyes to him. <Subject 1> (S1), using <Audio 1>'s timbre, asks tentatively, <d>[Chinese] 就这个？</d> Her left hand continues to support the box while his shoulder remains settled in the edge of the frame.
+[Shot 3] At 00:06.300, the camera cuts to a close-up of the open box and her hands. <Subject 4> is now clearly visible on the tissue. She sets the lid on the table, grips the key's flat head between thumb and index finger, and lifts it slightly above the rim. The tissue shifts under the key; metal ticks softly against the box edge. The frame follows this small lift while keeping the key and grip readable.
+[Shot 4] At 00:08.600, the camera cuts to a closer shared two-shot. Her left hand supports the box and her right holds the raised key. He follows it with his gaze, then meets her questioning eyes. <Subject 2> (S2), using <Audio 2>'s timbre, answers softly, <d>[Chinese] 你家的。</d> She looks from him to the key and back, her brow releases, and a brief surprised laugh becomes a relieved breath. Her fingers close around the key as his answering smile appears. The camera moves slightly closer, ending with both faces readable as their shared look settles.
+
+overall_soundscape:
+Quiet room tone bridges the cuts, beneath the paper movement, ceramic touch and small key contact. Their breathing and her brief laugh remain close and clear.
+
+non_diegetic_music:
+N/A

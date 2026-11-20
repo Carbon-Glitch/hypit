@@ -3,8 +3,7 @@
   <import as="sound" from="@hypit/sound@1"/>
   <import as="performance" from="@hypit/performance@1"/>
   <import from="@hypit/script@1"/>
-  <import as="text" from="@hypit/text@1"/>
-  <import as="seedance" from="@hypit/seedance@1"/>
+  <import as="asset" from="@hypit/media@1"/>
   <import as="pipeline" from="@hypit/media-pipeline@1"/>
   <import as="whisperx" from="@hypit/whisperx@1"/>
   <import as="time" from="@hypit/timeline-author@1"/>
@@ -15,10 +14,9 @@
   <import as="film" from="@hypit/film@1"/>
   <import as="render" from="@hypit/render-hyperframes@1"/>
   <import as="look" source="./look.svs"/>
-  <import as="kit" source="./direction.svs"/>
 
   <script id="story">
-    <opening><HOST>Here is @{proof}the useful part.@{/proof}</opening>
+    <opening><LEAD>Why did you bring @{proof}this envelope?@{/proof}</opening>
   </script>
   <space:Canvas id="canvas" width="720" height="1280"/>
   <program:Clock id="clock" frame-rate="30"/>
@@ -27,17 +25,9 @@
   <space:Frame id="title-frame" within={canvas}
     left="8%" top="12%" right="92%" bottom="30%"/>
 
-  <text:Value id="direction">
-    A close, naturally lit phone-video view of a presenter in a workshop.
-    HOST is the presenter, speaking to the camera with relaxed confidence.
-  </text:Value>
-  <text:Render id="prompt" template={kit.performance}>
-    <text:Set name="direction" text={direction}/>
-    <text:Set name="dialogue" text={story.segment.opening.dialogue}/>
-  </text:Render>
-  <seedance:TextVideo id="performance" model="mini" prompt={prompt}
-    duration="5" aspect-ratio="9:16" generate-audio="true"/>
-  <pipeline:Normalize id="performance-media" source={performance.video} clock={clock}
+  <!-- Accepted H3 media supplied by this project, not a new generation request. -->
+  <asset:Video id="accepted-shot" src="./assets/accepted-h3-shot.mp4"/>
+  <pipeline:Normalize id="performance-media" source={accepted-shot} clock={clock}
     video="primary-moving" audio="default" span-authority="video"/>
   <whisperx:SemanticTake id="opening-semantic" narrative={story}
     segment={story.segment.opening} media={performance-media.media} language="en"/>
@@ -60,7 +50,7 @@
   </typo:Style>
   <typo:Track id="titles" timeline={speech.timeline}>
     <typo:Area id="proof-label" placement={title-frame} style={title-style}
-      during={story.selection.proof}>The useful part</typo:Area>
+      during={story.selection.proof}>The envelope</typo:Area>
   </typo:Track>
   <film:Film id="main" canvas={canvas} timeline={speech.timeline} appearance={look.film.main}>
     <film:Track source={speech-picture.visual}/>

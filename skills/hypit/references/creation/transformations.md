@@ -1,141 +1,26 @@
-# Transforming a reference into a target
+# 改编短剧：体验机制的转译与增值
 
-Read this when a user brings a reference and asks for their own version: another person, object,
-world, performance, story, or audience. Several changes can belong to one creative intention.
+默认遵循 [体验保真、形式自由、改编增值](fidelity-contract.md)。用户可以要求换语言、造型、世界、道具、镜头或特效；在体验成立的范围内主动改进。源片 SOURCE_SHOTS/SOURCE_CONTEXT 是观察，目标完整分镜与DESIGN/已有设计是创作；两者分别维护。
 
-Look at the supplied material and think about the reference together with the user's request. What
-makes the original compelling, and how can that appeal belong to this new person or product? Keep
-the reference's particular humor, visual relationships, and rhythm in view as you develop the target.
-The reference archive describes the original; Brief records the user's intention; Treatment explains
-how the new piece will work. Useful discoveries can change any part of that understanding as the work
-develops.
+## 从体验而非外壳开始
 
-## Preserve the role, then recreate the form
+先明确源片各段怎样引起好奇、幽默、期待、紧张、反转和余韵：观众看见/听见什么、先相信什么、等待什么、何时改变判断、谁的反应让情绪落地。微小停顿、视线、声响、道具遮挡和对手反应可能比一句剧情摘要更重要。
 
-Recreate the reference's semantic timing intentions in the target. If a ranking portrait appears
-when a player is introduced and settles with the judgment, bind those events to the target's own
-Script. A different speaker or rewritten argument will change the seconds; the relationship can
-remain. Keep an explicit clock interval when that interval itself is part of the intended design.
+人物、文化、技术规则变化会改变行为可信度；重写具体机制，使铺垫、因果、权力/关系和目标体验仍成立。可以重新安排镜头、使用更清晰的视觉证据、改善台词节奏、增强空间或声音层次，但不能提前泄密、把喜剧削成普通对白或用漂亮空镜代替应有反应。
 
-Before replacing an object, understand the role it plays in the work. A presenter may also appear as
-an avatar, a voice, a B-roll subject, a phone image, and the identity inside an MG system. A product
-may be a prop, a screen, a demonstration, a claim, and the final CTA. Transform the role across every
-real manifestation; do not stop after changing its most obvious pixels.
+## 保存前后决定
 
-The target need not copy a form that no longer fits. Preserve the purpose of an action, composition,
-or callback while directing a form that makes sense for the new body, product, platform, and viewer.
-A cat can perform confidence through a planted pose, gaze, tail, or framing without literally copying
-a human hand gesture. A product with no screen can demonstrate the same benefit through a different
-piece of evidence.
+| 源体验/细节与证据 | 原因果与视听机制 | 目标替代机制 | 预期增值 | 验收与失败条件 |
+| --- | --- | --- | --- | --- |
 
-Useful transformation lenses include:
-
-- **subject or identity** — who carries the narrative role and everywhere that identity appears;
-- **product or brand** — product truth, use, props, UI, logos, colors, proof, offer, and CTA;
-- **Script, language, or CTA** — meaning, speech rhythm, on-screen wording, demonstrations, and the
-  timing relationships that follow the new words;
-- **platform, duration, or aspect** — which story functions survive, compress, expand, or need a new
-  composition;
-- **visual or tonal style** — art direction across generated shots, Caption, Typography, MG, Effect,
-  and Audio, without erasing the reference's useful structure;
-- **adding or removing a system** — redistribute the job formerly done by that system rather than
-  leaving a narrative hole;
-- **multiple references** — state which function comes from each reference and resolve conflicts in
-  Treatment instead of blending every surface detail.
-
-These lenses are prompts for thought, not fields to complete. Follow the relationships the actual work
-contains.
+普通形式改编按已授权 Brief 推进并写入 Treatment；改变核心体验、人物关系或用户指定保留形式时，给出具体方案与影响，再取得选择。H3 的困难不是弱化体验的授权。
 
 ## Reshape an event from footage
 
-Some adaptations are recognizable through an unfolding event rather than any one subject's pixels.
-A stylized direct-address performance, dance phrase, fight, moving camera view, or mishap seen by a
-fixed camera may depend on particular timing and physical relationships. These are useful places to
-look for temporal evidence: discover what carries the reference's appeal, from performed delivery
-and reaction to movement, contact, camera position and payoff.
+源片动作片段可揭示时序、接触、表演、焦点与相机关系；该片段是否真正作为生成输入，按 [视频方向](../playbooks/craft/video-direction.md#let-footage-carry-temporal-behavior-that-matters) 和实际路由决定。原片演员/服装/声线不自动成为目标身份。用目标资产和逐阶段导演描述形成可信的新执行，不直接照搬原片时钟。
 
-The target may change a person, object, setting, spoken words, sound, visual world, or several of
-these together. Changing the person is common; a narrow substitution may leave most other
-relationships intact. When a new body, object or story changes what an action means, reshape the
-action to serve the target's intention. Brief and Treatment hold the requested change and the new
-creative answer; the source footage remains evidence rather than a ready-made target timeline.
+## 把决定贯彻到所有出现处
 
-In a comic speaking reference, an unusual camera angle may work together with role-played vocal
-phrasing, expression and gesture. Put the intended words in Script, choose whose voice belongs to
-the target, and direct how the visible performance delivers the joke. A supplied portrait establishes
-appearance, not the voice or delivery. [Voice direction](../playbooks/craft/voice-direction.md) owns
-casting; [video direction](../playbooks/craft/video-direction.md#let-footage-carry-temporal-behavior-that-matters)
-owns when a selected source excerpt should condition the new shot.
+改变角色身份要同步肖像、身体、服装、声音、手部/背影和跨集状态；改变道具要同步尺度、功能、持握、揭示和声音；改变世界要同步规则代价、地点关系、美术、人物动机与可发生事件。语言转译还要保住笑点信息次序、角色策略、称谓和反应时长。不同参考各自承担明确职责，不机械混合色调/剧情。
 
-## "Make this with my face"
-
-Suppose the user supplies a portrait and a football Ranking video. The jokes concern the players, so
-the spoken argument and comic reveals may already suit the new presenter. Bring the user into the
-camera image with the reference's teasing confidence, useful framing, and room for the board. Keep
-the full [image craft](../playbooks/craft/image-direction.md), directing the supplied person's appeal
-and presence with the same care as any leading performer in this work. That image can carry all
-ordinary talking Takes and supply the person's other appearances.
-
-A joke about the original presenter's appearance or personal story needs another look: decide how
-its setup and payoff fit the new casting and Brief. The new person may invite a different delivery or
-a better version of the joke. A supplied pet might express the same confidence through a planted
-pose, gaze, or comic authority. Let the new character make the work feel inhabited.
-
-The portrait supplies visual identity; [voice direction](../playbooks/craft/voice-direction.md)
-uses supplied audio or a voice chosen for the target performance. The original photo's setting and
-pose may give way to the shot the video needs. Use [reference relationships](../playbooks/craft/generated-dependencies.md)
-to decide where the supplied image enters that production.
-
-## "Use my product"
-
-Suppose a podcast recommends a bottled product, while the user wants to promote their budgeting app
-and supplies receipt scanning as its real benefit. The casual recommendation, skeptical partner, and
-satisfying demonstration can still carry the exchange. The opening split screen, complementary
-views, and speaker-colored Caption may still give it its recognizable shape.
-
-The new conversation might turn on "You expect me to type every coffee?" A phone demonstration of
-scanning a receipt answers that objection. Now the host holds a phone, the covering footage shows the
-app in use, and the graphic reveal supports the same moment of understanding. Script, action, imagery,
-and CTA grow from what this product actually offers. Supplied product images and UI establish its
-appearance; the user's facts and relevant product material establish its claims. Resolve important
-gaps from available material or with the user while continuing to develop the creative idea.
-
-When both person and product change, consider their relationship together: why this person recommends
-it, how the partner responds, and what makes the encounter engaging. Treatment holds that creative
-answer; Source expresses its words, references, and semantic relationships.
-
-## Treat generation as ordinary production
-
-Think of the image model as a broadly informed painter, the video model as a broadly informed camera
-crew and performer, and audio generation as a broadly informed sound team. “Real” is an aesthetic
-direction—iPhone capture, natural light, documentary movement, room tone—not a claim about where the
-asset came from. The normal task is to create the target media.
-
-External references become essential when public world knowledge cannot determine exact identity:
-the user, a private or obscure product, a proprietary interface, an exact Logo or data display. An
-accepted generated image, Take, or sound can then become authority for later work.
-
-Prefer reference-conditioned video generation when identity, art direction, composition, or product
-continuity matters. The input guides the shot without having to appear as its literal first or last
-frame. Use keyframe-constrained generation when the endpoint image itself is part of the designed
-continuous change. Use text-only generation when the shot benefits from variation and needs no exact
-visual anchor. These are control meanings; package and Provider support remains owned by their public
-documentation.
-
-## Keep media dependencies shallow and useful
-
-Generate actual work: the main A-roll camera image, the reverse angle, a B-roll image, a product close
-up, or a component slot. The first accepted presenter image will often already be the main A-roll
-camera image. Another A-roll view can be generated from it by describing the new camera relationship,
-eye line, recurring objects, light, and what naturally changes when the camera faces the other way.
-The shared world lives in the relationship between useful shots, not in an abstract scene plate.
-
-An independent identity asset or location image is useful when the work itself needs it independently.
-Otherwise, avoid chains of intermediate pictures that exist only to feed the next generation. For a
-single shot split by a model's duration limit, reuse the same accepted visual authorities for each
-part unless the cut itself is designed around a literal boundary frame.
-
-Carry accepted media into the composition through Source and Run Candidates. Use Studio and rendered
-Results to develop Caption, MG, B-roll coverage, effects and sound around those assets. If a generated
-item fails its intended role, improve the responsible prompt, reference relation or shot design before
-deciding on another authorized request. Reconsider Treatment when the creative answer itself changes.
+按[前期内容归属](drama-preproduction.md)补实际变化，完成[资产](asset-plan.md)、完整目标分镜与真实请求迁移；[story transfer](../production/story-transfer.md) 逐项追到采用剪辑。对比按观众效果与具体目标机制判断，明确要求还原的形式另行比对；实际观看前不能把“理论增值”写成已实现。

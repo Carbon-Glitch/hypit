@@ -21,7 +21,7 @@ This small Author Source produces Text and Script values; it makes no media requ
   <import as="kit" source="./direction.svs"/>
 
   <script id="story">
-    <opening><HOST>Here is @{proof}the useful part.@{/proof}</opening>
+    <opening><CHARACTER>@{proof}已定台词。@{/proof}</opening>
   </script>
   <copy:Value id="direction">She leans in slightly, amused by her own observation.</copy:Value>
   <copy:Render id="prompt" template={kit.performance}>
@@ -33,7 +33,7 @@ This small Author Source produces Text and Script values; it makes no media requ
 
 Package imports expose vocabulary under a local alias. Source imports expose a document's public
 values: `<import as="look" source="./look.svs"/>`. A data package can expose the same kind of Source,
-for example `<import as="ugc" source="@hypit/gpt-image-kits/phone-ugc-v1"/>`; its own relative imports
+for example `<import as="drama" source="@studio/drama-kits/look-v1"/>`; its own relative imports
 and assets stay inside that package. Put imports in the leading prologue, before body declarations.
 Use a package's logical Module ABI, such as `@hypit/text@1`, in `from`; installed package versions
 belong to ordinary package management. Reading a packaged Source does not activate its JavaScript.
@@ -95,7 +95,7 @@ values. Quote strings whose punctuation could be read as SVS syntax. Arrays and 
 JSON, including quoted keys and strings:
 
 ```svs
-caption.host {
+caption.character {
   enabled: true;
   color: "#ff6f61";
   padding: [12, 18];

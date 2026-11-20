@@ -30,7 +30,7 @@ The author-facing forms are:
 | --- | --- |
 | `<opening>...</opening>` | A Segment named `opening`; all spoken prose belongs inside a Segment. |
 | `<pause/>` | A self-closing Segment with identity and boundaries but no words. |
-| `<HOST>` | A Role Cue inside the current Segment; it applies until another Role Cue or the Segment end. |
+| `<CHARACTER_A>` | A Role Cue inside the current Segment; it applies until another Role Cue or the Segment end. |
 | `<display text \| spoken text>` | One Dual Text unit with separate visible and pronounced wording. |
 | `<display text\|>` | One complete display/speech unit using the same wording for both; individual spoken word times remain available. |
 | `< \| spoken text>` | Spoken words that keep semantic timing while contributing no visible Caption words. |
@@ -46,8 +46,8 @@ carries a wordless passage. A Role Cue is a bare turn marker: the next Role Cue 
 and closing the Segment ends the final turn
 and resets its Role. When a Segment uses Roles, place the first Role before that Segment's first
 spoken text. One Segment can contain several Role turns without requiring several generated Takes. A bare tag
-inside a Segment is a Role Cue by context, not by capitalization: `<host>`, `<主持人>` and
-`<진행자>` can name speakers. The label directs the request through dialogue; it selects no voice
+inside a Segment is a Role Cue by context, not by capitalization: `<character>`, `<主角>` and
+`<주인공>` can name speakers. The label directs the request through dialogue; it selects no voice
 or character asset by itself.
 
 Dual Text can contain several visible or spoken words on either side; its display side feeds Caption
@@ -87,11 +87,6 @@ In ordinary prose, a comment or zero-width marker also leaves a following attrib
 word: `hello<!--note-->{emphasis}` and `hello@{beat!}{emphasis}` annotate `hello`.
 An actual space before `{emphasis}` breaks that attachment.
 A comment can also stand between passages:
-
-```svml
-<!-- This note enters no text projection. -->
-<social><HOST> Follow us \@hypit.</social>
-```
 
 Reserved Script punctuation remains literal when escaped: `\@` produces `@`, `\<` produces `<`,
 `\{` produces `{`, `\}` produces `}`, `\|` produces `|`, and `\\` produces `\`. A plain `>` needs
@@ -157,21 +152,21 @@ For example, this Segment inside `story` assigns two speaking turns:
 
 ```svml
 <exchange>
-  <HOST> Let me show you.
-  <GUEST> That looks much easier.
+  <CHARACTER_A> 已定台词A。
+  <CHARACTER_B> 已定台词B。
 </exchange>
 ```
 
 `{story.segment.exchange.dialogue}` supplies:
 
 ```text
-HOST: Let me show you.
-GUEST: That looks much easier.
+CHARACTER_A: 已定台词A。
+CHARACTER_B: 已定台词B。
 ```
 
-Pass that Text to the speaking prompt. In action direction, relate HOST and GUEST to the supplied
+Pass that Text to the speaking prompt. In action direction, relate CHARACTER_A and CHARACTER_B to the supplied
 character views and voices. The selected [Prompt Kit](prompt-kits.md) owns its reference
-order; [podcast direction](../playbooks/formats/two-person-podcast.md#direct-conversation-inside-a-take)
+order; [short-drama direction](../playbooks/formats/short-drama.md)
 shows how those roles and references form one performed exchange.
 
 These are projections of one authored Script, not copies to maintain. The performance request,
@@ -208,8 +203,8 @@ word boundaries:
 
 ```svml
 @{~whole}
-<opening><HOST>First thought.</opening>
-<answer><HOST>Final answer.</answer>
+<opening><CHARACTER_A>First thought.</opening>
+<answer><CHARACTER_A>Final answer.</answer>
 @{/whole~}
 ```
 

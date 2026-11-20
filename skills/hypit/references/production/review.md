@@ -3,18 +3,9 @@
 Read this when opening Studio, judging an encoded Result, or improving the layout, timing and
 expression of the new Film.
 
-For picture inspection, start with [Snapshots](snapshots.md) of the current Studio work or existing
-HTML. Single frames establish detail; continuous frame grids establish movement and handoffs.
-Use Studio playback to hear and feel the passage, and the exported file to judge encoded delivery.
-
 [Studio](studio.md) explains launch, session reuse, displayed information, Source writeback and
 project Companions. [Timestamped Comments](studio.md#revise-from-timestamped-comments) connects user
 feedback to the owning production facts. [Builds and Results](builds.md) explains retrieval and explicit Output reuse.
-
-For a collaborative review, [show the editable work before export](studio.md#review-before-export)
-and introduce both views: Comments for time-located direction, Studio for the timeline and exposed
-parameters. Browser playback makes both available without first encoding a complete video. When a final file is requested,
-render and inspect that encoded deliverable as a separate step.
 
 ## Make the composition work
 
@@ -87,8 +78,8 @@ Use whichever view can answer the current question:
   current work. Seek or select semantic entities to inspect their place in the composition.
 - Use a [range render](rendering.md#choose-a-render-interval-in-frames) when the question requires
   an encoded clip with sound, such as testing an export setting or delivering a passage.
-- Watch the whole deliverable when the question concerns Hook clarity, story movement, payoff,
-  CTA, or how A-roll, B-roll, Caption, MG and Effects work together.
+- Watch the whole deliverable when the question concerns story movement, expectation, reveal,
+  listener reaction, payoff or how performance, sound, captions and effects work together.
 
 Choose and combine these views according to the current question. A component name alone does not
 prove that a particular state is stable or that a change occurs at a guessed time; Studio or actual
@@ -136,13 +127,13 @@ relationship: an accumulation on a board, a switch from A-roll to B-roll, a Capt
 speaker, an MG reveal, or a payoff returning to the Hook. A short clip or dense adjacent frames can
 establish motion and order; a full-resolution frame can establish text and geometry.
 
-The target may intentionally change person, product, brand, language, or visual world. Compare
+The target may intentionally change character, language, or visual world. Compare
 whether the transformed element performs the same useful role, not whether its pixels match. When the
 target's Treatment deliberately changes the role too, the Treatment is the authority.
 
-For a supplied person or product, compare the new appearances with those actual references as well
+For a supplied character or key prop, compare the new appearances with those actual references as well
 as the intended camera image. Judge recognizable identity, appeal, and how naturally the new subject
-inhabits the piece; check that dialogue, demonstrations, and graphic details make sense for this target.
+inhabits the piece; check that dialogue, action, and graphic details make sense for this target.
 
 Inspect the detailed realization of each relationship: the entry catches attention, the hold gives
 enough reading time, the motion explains a change, and the exit clears the next idea. Compare source

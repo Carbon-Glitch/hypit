@@ -7,7 +7,7 @@ component. [Studio](studio.md) owns opening and operating the editor;
 The Companion describes two things: **what an author can recognize and select**, and **which
 authored fact an edit changes**. Keep the same concepts across the picture, timeline and Inspector.
 A reveal can be one entity even when its graphic moves and later remains on a board. A coordinated
-presenter-and-diagram scene can stay one entity when its layout is intended to be edited together.
+character-and-diagram scene can stay one entity when its layout is intended to be edited together.
 Recognition and editing are separate capabilities. A production may use Studio mainly to watch and
 show its arrangement, with a few useful adjustments. Clear labels, timing and selected read-only
 facts can fully serve a one-off scene; useful Caption controls can coexist with that fixed scene.

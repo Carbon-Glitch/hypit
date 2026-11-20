@@ -1,9 +1,6 @@
 # Short drama
 
-Short drama is performance-led storytelling. Characters do more than deliver information: their
-wants, reactions, actions, relationships and surroundings make one event lead to the next. This is
-rich A-roll. A domestic scene, a staged encounter, a podcast exchange or a street interview can all
-use this dramatic shape when the human event carries the story.
+Use the full target storyboard as the ordinary recreation story/dialogue master, with the existing design, necessary color cards and [reference assets](../../creation/drama-reference-sheets.md). New plot or a separately commissioned script has its full literary body in the existing owner. Choose performance, listener coverage and cuts with [drama editing](../../production/drama-editing.md); actual EDIT/source media own the final clocks.
 
 ## Give each passage a dramatic job
 
@@ -30,19 +27,10 @@ story view with the characters in their setting, or both. Direct images and Take
 for the current dramatic intention. Free direction suits the variety of dramatic scenes; a reusable
 Prompt Kit becomes useful when repeated productions reveal a stable prompt relationship worth preserving.
 
-The first useful image can be a character reference or a view of the encounter itself. Build later
-views from the images that hold the facts they need:
-
 - a character image can carry identity into a view that establishes a new place and dramatic state;
 - a shared two-person view can establish the bodies, gaze axis and encounter before closer views;
 - one story view can carry a costume, prop or spatial relationship into the next;
 - a supplied image can serve directly when it already expresses the intended character and shot.
-
-Within one location, a small set of useful views can support many Takes. In a living-room dialogue,
-one view for each conversational side may preserve everything the passage needs; modest reframing,
-performance and camera changes can happen in video. Another image becomes useful when a new view must
-establish an important fact, such as a changed relationship, decisive prop state or plot-bearing part
-of the space.
 
 Decide separately which views to establish and which dramatic action to generate together. One Take
 can move among several shots or places while key images establish the people, objects, composition
@@ -50,11 +38,6 @@ or continuity that need explicit visual direction; one view can also guide sever
 place merits an image when the story needs that particular view established, while other moves and
 cuts can develop within the video passage. The image graph follows those visual dependencies rather
 than the count of locations or edits.
-
-[Reference relationships](../craft/generated-dependencies.md) owns these image edges. The
-[two-person podcast](two-person-podcast.md) and [street interview](street-interview.md) show two
-different ways of establishing a conversational world. [Video direction](../craft/video-direction.md#direct-camera-and-cuts-as-part-of-the-passage)
-owns the generated passage's shots and reference relationship.
 
 ## Let every camera see the same world differently
 

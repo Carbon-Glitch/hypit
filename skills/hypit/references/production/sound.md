@@ -14,7 +14,7 @@ chooses how their pictures appear. Neither changes the Script or the Take placem
 <sound:Track id="voice" timeline={program.timeline}>
   <sound:Use style={normal}/>
   <sound:Use at="0f" for="2s" style={opening}/>
-  <sound:Use during={story.selection.demonstration} style={silent}/>
+  <sound:Use during={story.selection.reveal} style={silent}/>
 </sound:Track>
 ```
 

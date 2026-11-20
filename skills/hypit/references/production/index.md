@@ -1,10 +1,12 @@
 # Production: express, compose and deliver
 
+For the current upstream Visual/Audio Clip model and new native projects, use the [current production index](../general/references/production/index.md). The local drama/legacy routes below remain for existing projects; check the selected executable vocabulary before changing syntax.
+
 Enter at the question the current work raises. These groups locate knowledge; they are not stages
 that every task must complete. [System relationships](system.md) explains the common model.
 Creation and the relevant [Format/Craft](../playbooks/index.md) supply the creative decisions.
 
-For performance-led work, including pure A-roll and short drama, prefer Script → prepared
+For dramatic performance, prefer the compiled Script → prepared
 SemanticTakes → Timeline. Performance and Sound present the selected footage and audio; Caption and
 other contributions join where useful. Semantic organization remains valuable even with no MG.
 For a standalone asset edit, follow the actual material operation and deliver its output.
@@ -29,7 +31,7 @@ For a standalone asset edit, follow the actual material operation and deliver it
 | Semantic events, clock positions, offsets, durations and timing edits | [Timing](timing.md) |
 | Canvas, destination Frames, source extents, fit, crop and coordinates | [Spatial layout](spatial.md) |
 | Download source footage | [Video downloads](video-downloads.md) |
-| Obtain real screenshots, recordings or HTML graphics | [Browser capture](browser-capture.md) |
+| Prepare a story-required message/screen evidence or authored title/effect | [Browser capture](browser-capture.md) |
 | Crop, resize, compose or isolate an image | [Image operations](image-operations.md) |
 
 ## Present content
@@ -57,6 +59,9 @@ A-roll-only or B-roll-only.
 | How do I expose meaningful Studio entities and actual author controls? | [Studio Companions](studio-companions.md) |
 | How does an owner distribute and update a package across projects? | [Component sharing](component-sharing.md) |
 
+For effects/titles first use [post design](post-design.md) at storyboard time; final work needs
+its exact implementation and media handoff, not a generic export command.
+
 ## Execute, revise and deliver
 
 | Current question | Owner |
@@ -69,5 +74,5 @@ A-roll-only or B-roll-only.
 | Open the selected work, read feedback and edit its Source | [Studio](studio.md) |
 | Judge the actual performance, composition and encoded deliverable | [Review](review.md) |
 
-For installation, service selection or local preparation, follow the [Environment routes](../../SKILL.md#where-the-current-question-is-answered).
+For installation, service selection or local preparation, follow the [Environment routes](../../SKILL.md).
 Package vocabulary and package-local documentation own exact ports and implementation-specific options.

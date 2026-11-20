@@ -8,7 +8,7 @@ video as a project file through yt-dlp. For a website's interface, scroll or int
 
 ```bash
 hypit media fetch "https://example.com/watch?v=VIDEO_ID" \
-  --to references/ad/source.mp4
+  --to references/source/source.mp4
 ```
 
 Replace the example URL with the actual video link. Quote it so URL punctuation stays part of the

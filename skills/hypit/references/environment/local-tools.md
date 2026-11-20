@@ -1,22 +1,15 @@
 # Local tools and Managed Programs
 
-Read this when assessing local preparation, selecting local WhisperX, or preparing and repairing a
+Read this when assessing local preparation, reading existing speech timestamps, or preparing and repairing a
 local Endpoint's executable or Managed Program.
 
-Go to [host tools](#supply-host-executables-at-machine-scope),
-[local media configuration](#configure-local-media-tools),
-[Program lifecycle](#let-the-selected-endpoint-own-its-program),
-[render browser](#prepare-the-local-rendering-browser),
-[WhisperX](#select-local-whisperx-explicitly), or
-[downloads and mirrors](#make-network-preparation-practical) as needed.
+For analysis, use current-Agent capabilities or existing timestamps; no external analysis-model preparation is required.
 
 ## Assess local preparation
 
 Use `hypit paths` to locate the selected Profile and machine state. Inspect relevant service
 configuration, the Provider's documented installation locations, and executables such as `ffmpeg`
-and `uv`. Hypit's managed WhisperX has its own Python environment; a missing global `whisperx`
-command leaves that installation's state unknown. The installed `@hypit/provider-whisperx-local`
-README owns its preparation and service locations.
+and `uv`. Analysis uses the current Agent or local waveform data.
 
 Establish what already works, what needs starting or repair, and what needs downloads. Use those
 findings in [service selection](model-and-provider.md#choose-the-practical-capability-path-with-the-user),
@@ -113,17 +106,15 @@ Read the actual media failure when a particular input or codec needs attention. 
 settings must reach the process running the work; restarting a terminal alone does not change an
 existing Worker. See [configuration changes](profile.md#know-when-a-change-takes-effect).
 
+## Independent actual audio inspection
+
+The current Agent observes sound when its capabilities allow it; otherwise scripts/audio_signal.py measures local waveform/energy. No analysis API key or external model is needed.
+
 ## Let the selected Endpoint own its Program
 
-An Endpoint may contribute one Managed Program: prepared resources with an optional persistent
-helper. A render browser needs installation but no permanently running Chrome; WhisperX needs
-weights and a warm service; the media tools need executable probes. The Provider owns the applicable
-preparation, start, probe and configuration declarations. Runtime operates those declarations:
+An Endpoint may contribute a Managed Program for a selected media tool. A render browser and FFmpeg are prepared when needed; the Provider owns their preparation, probes and runtime declarations. Analysis does not start a model service.
 
-```bash
-hypit programs up --endpoint whisperx.local
-hypit programs status --endpoint whisperx.local
-```
+
 
 Name the chosen Profile instance with `--endpoint`; repeat it for several services. This scopes
 package preparation and Program operations together. `runtime up --endpoint <instance>` also starts
@@ -139,17 +130,7 @@ Program commands leave the Worker lifecycle alone:
 | Inspect their current state | `hypit programs status --endpoint <instance>` |
 | Stop helpers managed by Hypit | `hypit programs down --endpoint <instance>` |
 
-`runtime down` stops the Worker and its execution processes while leaving separately managed Programs available. This lets a later
-Build reuse an already warm local model. Use scoped `programs down` when a helper itself should stop.
-A healthy service stays warm across repeated `up` calls, while explicit preparation can still add
-newly requested resources. Ordinary Build submission may start the Worker, but does not install
-missing resources or start these external helpers. Local WhisperX reconciles its packaged Python
-environment before a cold start; uv reuses cached dependencies and weights. This is separate from
-loading project component code for a new Build.
-A service still loading can also have a live PID: repeated `up` observes that owned process instead
-of starting another one. A readiness wait can end with the process still alive. Check its probe and
-log to understand why it is not Ready. Concurrent preparation of the same Program reports its
-existing owner and available logs; repeating the command does not accelerate that preparation.
+For analysis, use current-Agent capabilities or existing timestamps; no external analysis-model preparation is required.
 
 Ordinary projects use these declarations instead of running a service's internal `uv sync` or Python
 entry point by hand. Contributor/operator commands in a service README are for diagnosing that
@@ -223,100 +204,11 @@ failure through its render diagnostics. Do not "repair" it by quietly trying ano
 
 ## Select local WhisperX explicitly
 
-Local and hosted WhisperX implement the same alignment capability. When local execution is chosen,
-merge this fragment into the Profile, retaining the other services the production uses:
-
-```json
-{
-  "endpoints": {
-    "whisperx.local": {
-      "use": "@hypit/provider-whisperx-local",
-      "config": {
-        "expectedModel": "small",
-        "expectedDevice": "cpu",
-        "expectedCompute": "int8",
-        "alignmentLanguages": ["ko"]
-      }
-    }
-  },
-  "bindings": {
-    "@hypit/whisperx@1#whisperx-alignment": "whisperx.local"
-  }
-}
-```
-
-This is a Korean alignment example on CPU using the modest-machine `small` model. Choose the actual
-model and languages for the production; these are not universal quality recommendations.
-The binding is needed when another selected Endpoint, such as HypiHub, also offers alignment.
-
-| Setting | What it selects |
-| --- | --- |
-| `expectedModel` | Speech-recognition model loaded by the service |
-| `expectedDevice`, `expectedCompute`, `expectedBatchSize` | Inference hardware, representation and batch budget |
-| `alignmentLanguages` | Language-specific alignment resources to prepare |
-| `modelCacheDirectory` | Optional cache root with Hugging Face and Torch subdirectories; relative to Runtime `dataRoot` |
-| `baseUrl` | This local Provider's loopback service address; separate services need separate addresses |
-| `serviceCommand` | Optional operator-managed compatible service installation/start command |
-
-The installed Provider README owns exact fields, defaults, device support and service identity.
-Apple Silicon does not imply CUDA support. The loopback service accepts canonical speech evidence
-and returns measured alignment; it does not interpret Script, Caption Cues, or Semantic Segments.
-The authored request's language and the Profile's preparation list have separate purposes:
-`alignmentLanguages` prepares resources, while the request selects which language to use.
-
-Choose the ASR model deliberately for the language, hardware and work. For quality-oriented
-multilingual work, a multilingual large model is a useful starting preference when hardware and
-preparation are practical. A ready smaller model can serve straightforward reference understanding
-on a modest CPU machine; its availability is more informative than the ability to begin a larger
-download. Weigh accuracy needs against setup and inference time, including the hosted option.
-The Provider README owns exact settings, compute choices and the distinction between transcription
-and language-specific alignment. Configure the chosen model before preparing it.
-
-Set `alignmentLanguages` to this production's actual languages; retain other languages still needed.
-For example, change `["ko"]` to `["ko", "en"]` when English alignment is also needed, then prepare:
-
-```bash
-hypit programs prepare --endpoint whisperx.local
-hypit programs up --endpoint whisperx.local
-```
-
-The first command prepares the Python environment, selected ASR model, requested alignment weights
-and sentence data without starting the service. The second also performs preparation if needed,
-then starts the helper. Use `runtime up --endpoint whisperx.local` instead when the Worker should
-start too. Startup and inference only read prepared resources.
-
-The language list is a preparation demand, not an allowlist blocking other supported cached
-languages. Omitting it does not prepare every language. Native cache reuse depends on the chosen
-model/cache settings, not a separate Hypit resource catalogue.
-
-A healthy service does not imply every language is prepared. Add a newly needed language to the
-Profile and run `programs prepare` even if the service is online. Keep its cache selection unchanged
-when adding resources to that running service. A missing language resource fails with an explicit
-preparation instruction; do not retry inference hoping it will download weights. The Provider README
-owns optional model cache selection. Native upstream caches remain reusable by default.
-Changing the running service's model, device, compute, batch size or cache requires an explicit
-helper restart when idle. Prepare the new resources first; stop with scoped `programs down` and
-start with scoped `programs up`. Restarting only the Worker does not restart WhisperX.
+This local workflow no longer prepares ASR or other analysis models. Use the current Agent, provided timestamps or deterministic waveform/energy data. The heading remains for existing links.
 
 ## Make network preparation practical
 
-Treat preparation as part of delivering the video. Read the current command and its progress:
-which dependency or weight file, which download host, how much data has arrived, and whether the
-process is downloading, unpacking or loading a model. Managed Program preparation reports `install.log`;
-service startup reports `program.log`. On Windows, service stderr is in the adjacent `program.err.log`.
-Model-loading and inference diagnostics belong there; download diagnostics belong to preparation. Read the relevant recent output while a long
-command runs. Logs expose the subprocess's output; some downloaders suppress progress outside a terminal.
-`programs status` reports existing installation and service log paths, including when preparation has
-not yet started the service. These files retain history; their presence does not mean work is active.
-`--json` keeps the final result on stdout and sends live preparation notices to stderr. WhisperX's own
-log distinguishes ASR loading, transcription, first-use loading of prepared language models and
-word alignment. Loading cached weights into memory is not downloading them.
-Use available transfer progress, cache growth and process activity to judge whether waiting remains
-reasonable for this commission; a quiet log alone does not establish a stalled download.
-A longer timeout helps a healthy slow transfer finish; it does not improve an unusable route.
-Use each observation to decide whether to wait, change a download route or recommend another service,
-and share what that means for the piece. Let the process carry out a known wait while you advance
-independent work; reading the same output repeatedly adds no new evidence.
+For analysis, use current-Agent capabilities or existing timestamps; no external analysis-model preparation is required.
 
 Mainland China and other restricted networks can make particular hosts slow or unreachable. Use the
 user's network context and actual transfer evidence to choose a reachable source, rather than
@@ -351,24 +243,13 @@ trust or machine-wide configuration choice belongs with the user. Keep the selec
 versions and record the effective preparation choices for the next session. Read the actual download
 host afterward to establish that the intended route was used.
 
-For example, after choosing local WhisperX and a trusted compatible Hugging Face mirror, pass its
-URL to preparation. Replace this illustrative address with the chosen real source:
+For analysis, use current-Agent capabilities or existing timestamps; no external analysis-model preparation is required.
 
-```bash
-HF_ENDPOINT=https://hf-mirror.example hypit programs prepare --endpoint whisperx.local
-```
+
 
 In PowerShell, scope the environment change and restore the previous setting:
 
-```powershell
-$previousHypitHfEndpoint = $env:HF_ENDPOINT
-try {
-  $env:HF_ENDPOINT = 'https://hf-mirror.example'
-  hypit programs prepare --endpoint whisperx.local
-} finally {
-  $env:HF_ENDPOINT = $previousHypitHfEndpoint
-}
-```
+
 
 A download-source change does not require restarting an already running service when the selected
 cache is unchanged. Preparation writes resources there; inference reads those prepared files.

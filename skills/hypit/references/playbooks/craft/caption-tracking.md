@@ -21,7 +21,7 @@ Measure whichever available picture lets those relationships be mapped accuratel
   obscure the person being measured.
 
 Retain the relation between the measured source and its use. A source timestamp can change meaning
-after trim or retiming, and a face box can move after crop or reframing. A presenter shrinking into an
+after trim or retiming, and a face box can move after crop or reframing. A character shrinking into an
 inset needs positions that follow that actual transformation. When the same person appears in
 several views simultaneously, choose the view this Caption follows. Fine accepts one region per Role
 per frame; several simultaneous text placements need an explicitly authored presentation.
@@ -40,15 +40,15 @@ manual measurement can supply the same authored data. The stable Hypit input is 
 RegionTimeline, so detector invocation can remain an external, project-side preparation step.
 
 GVI's timestamped boxes are observations, not Script Roles or ready-to-use Hypit head tracks. Its
-[response schema](https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse#TimestampedObject)
+[response schema](https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse#timestampedobject)
 expresses `timeOffset` relative to the input video and the rectangle as `normalizedBoundingBox`.
 Use all relevant observations, not just the first box printed by a sample program.
 
 Treat the returned face tracks as candidate observations. Inspect representative frames from each
 track and associate useful fragments with the intended Script Role. A detector track is not a global
-person identity: a cut can split one guest across several tracks, and one shared shot can contain
+person identity: a cut can split one character across several tracks, and one shared shot can contain
 several people. Combine the fragments that visibly belong to the Role in final program time. Selecting
-the first or largest face alone can attach the guest's Caption to the interviewer.
+the first or largest face alone can attach the speaker's Caption to a listening character.
 
 ## Map observations into the composition
 
@@ -95,7 +95,7 @@ For example, this is a three-frame data-shape illustration, not a ready timeline
 heads.default {
   frame-count: 3;
   tracks: [
-    {"id":"GUEST","regions":[[0.12,0.09,0.20,0.26],null,[0.13,0.10,0.20,0.26]]}
+    {"id":"CHARACTER","regions":[[0.12,0.09,0.20,0.26],null,[0.13,0.10,0.20,0.26]]}
   ];
 }
 ```

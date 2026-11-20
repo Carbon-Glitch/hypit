@@ -1,232 +1,40 @@
-# Project files
+# 文件归属与恢复
 
-Read this when starting, resuming, or reorganizing a video project. The layout below is a working
-convention, not syntax: Hypit resolves ordinary paths and does not assign meaning to these directory
-names.
+开始、续做或整理工程时读。默认运行[episode_runner](../production/efficient-execution.md)和实际EDIT链，不要求SVML、Runtime Profile、五份前期文档或独立审查。已有SVML工程才按[生产索引](../production/index.md)进入相应语法。
 
-## Establish the project boundary
+## 最小工程
 
-Understand the current request and keep its intended result in [Brief](brief.md). Supplied paths,
-the selected production's notes and their explicit references establish which work belongs here.
-A request to continue or revise a named production carries that work forward. A new adaptation
-starts from the supplied reference and requested changes, with its own target and working files.
-When the target is clear, choose a suitable project location and tell the user where the work lives.
-Clarify the intended target when the request leaves genuinely different productions possible.
+目录沿用项目，不为匹配示例搬文件。原片只读，目标设计与源观察分开；外部共享资产仅沿用户路径或工程显式引用查找。
 
-The current shell directory may be the Skill or executable installation rather than a video project.
-Keep discovery tied to the question being answered:
+| 所有者 | 保存什么 | 不重复创建什么 |
+| --- | --- | --- |
+| SOURCE_SHOTS.csv / SOURCE_CONTEXT.json | 完整镜头、观察/推断/未知、证据、共同事实、E/EX、卖点和声音发展 | 源SCRIPT、全剧摘要、第二份分析数据库 |
+| STORYBOARD.csv | 完整目标动作、准确台词、来源义务、镜头起终/声音/切点 | 普通复刻的独立剧本、节拍表、覆盖报告 |
+| DESIGN / ASSETS（可合并） | 改编范围、必要世界/人物/视听事实、资产身份/变体/版本与实际消费者 | 每镜复述人物设定、无消费者资产、独立导演报告 |
+| 采用记录 / EDIT | 实际文件和版本、可用区间与缺陷、选定区间、最终时钟和可执行后期 | 再写一份剪辑方案或QA台账 |
+| PROGRESS / DELIVERY | 当前缺口/任务ID/下一步；实际出口、检查方式/范围、具体残留 | 历史流水账、模板式通过报告 |
 
-| What is needed | Where the useful evidence lives |
-| --- | --- |
-| An executable or prepared local service | `hypit paths`, package-manager records, the selected Profile and Provider-documented tool locations |
-| Surface syntax or reusable behavior | Installed vocabulary, the owning package's documentation and a relevant component example |
-| This production's inputs and completed work | Supplied files, its notes, Sources, Runs and selected Result repository, including explicitly linked shared assets |
+这些是信息职责，不是文件数量要求。已有BRIEF/TREATMENT/WORLD/CHARACTERS/VISUAL继续作为其事实的唯一来源；新工程只创建实际有内容的所有者。新剧情、大幅改动动机/规则/因果或独立剧本委托才增加完整文学正文，由它拥有故事与台词。
 
-Follow a path beyond the project when a supplied location, recorded dependency or documented tool
-location explains its purpose. A nearby project with a similar name or subject does not establish
-that connection. If the expected input is missing, report the missing item and resolve its location
-or prepare the new material the commission needs. This keeps discovery useful without turning
-the machine's other productions into an implicit asset library.
+`SHOT_PACKET`、`REFERENCE_PLAN`、`EPISODE.json`及source快照由工具从上述记录派生。保存实际请求、参考绑定、taskId、采用版本和必要回执，以便恢复；不要手填allocation、workflow、content-review或acceptance plan来证明工作完成。
 
-Judge connected earlier work by its contribution: a reference, reusable behavior, or material that
-fits the intended person, product, words and presentation. Learning a component from an example
-carries its mechanics into the new work; casting, prompts, assets and accounts remain this
-production's choices. Explain useful reuse alongside what the requested changes require. Finding
-a similar finished video answers an availability question, not whether this commission is complete.
-A proposal to substitute a different existing video belongs in the conversation with the user.
+## 写作与上下文
 
-Run commands from the video project's root. A small `package.json` makes that root explicit and
-can later hold the project's component dependencies:
+[写作接口](document-writing.md)现在由当前Agent直接读写原有所有者。`.hypit-writing/`中的旧输入、响应与回执仅用于恢复；普通新创作无需另建调用批次。
 
-```json
-{
-  "name": "workshop-video",
-  "version": "0.0.0",
-  "private": true,
-  "type": "module"
-}
-```
+## 恢复与变更
 
-The CLI uses the nearest `package.json` above the command's working directory, or that directory
-itself when none exists. Passing a Source or Runtime path does not select a different project.
-Sources can live below the root, with file and Source imports relative to the declaring file.
+先读PROGRESS和队列/采用记录，定位到当前场次、镜头、实际采用区间、活跃taskId及缺口；再读本次所需源/目标行与依赖。没有PROGRESS时从队列和真实文件恢复，不补写历史报告。
 
-| Boundary | When to set it explicitly |
-| --- | --- |
-| `--workspace <directory>` | Choose the project root for Sources, Runtime selection, project packages and Results when running from another directory |
-| `--asset-root <directory>` | Admit assets stored elsewhere while keeping Source imports in their workspace |
-| `--package-root <directory>` | Resolve project packages from another installation location |
+- 源观察修正：回原片取证，只更新受影响的目标映射。
+- 设计/资产变更：检查实际消费者，仍正确的镜头继续复用。
+- 动作/对白/状态改变：更新对应分镜、提示词及动态后继；不能把计划终点当实际结果。
+- 采用区间/速度改变：重算受影响字幕、音乐、图形cue及后继起点。
+- 同一路径内容改变：旧观察不再证明新版；按字节/版本、区间和处理参数识别缓存。
+- 提交/下载中断：先查原taskId和已付费响应，不自动重投。
 
-Relative command-line paths start at the shell's current directory. `--workspace` selects the project
-without rebasing the Run, Source or `--runtime` argument. For example, from outside a project:
+## 交付
 
-```bash
-hypit paths --workspace /path/to/video-project
-hypit studio --run /path/to/video-project/build.svrun --workspace /path/to/video-project
-```
+交付实际最终MP4及可恢复的EDIT、采用素材、必要资产和源/目标文件；保留相对路径、任务回执与实际工具参数。凭据仍留系统配置。存在多个字幕/无字等已约定出口时共享渲染缓存。
 
-`paths` shows the resolved project and where its Runtime selection came from. Source imports and asset
-references inside files remain relative to their declaring file.
-
-For example, `hypit check authors/main.svml --asset-root /path/to/shared-media` admits intentionally
-referenced shared media. Keep the same relevant boundaries for subsequent commands. An ordinary
-project uses its own package installation; reserved `@hypit/*` packages come from the selected
-Distribution. [Distribution](../environment/distribution.md) explains locating that executable,
-and [component vocabulary](../production/vocabulary.md#let-ordinary-package-management-own-distribution)
-explains installing project packages.
-
-## Keep reference truth and target truth separate
-
-A reference archive says what an existing piece does. A production says what the new piece should do
-and contains the files that make it. One reference can inform several productions, and one production
-can draw from several references; ordinary relative links express those relationships without a
-central project index.
-
-```text
-project/
-├── references/
-│   └── <reference>/
-│       ├── source.*
-│       ├── ANALYSIS.md
-│       ├── TIMELINE.md
-│       ├── transcript.json
-│       ├── evidence/
-│       ├── PROGRESS.md          # only while understanding is in progress
-│       └── drafts/              # optional observation experiments
-├── productions/
-│   └── <target>/
-│       ├── BRIEF.md
-│       ├── TREATMENT.md
-│       ├── PROGRESS.md
-│       ├── authors/
-│       ├── recipes/
-│       ├── runs/
-│       ├── assets/
-│       └── drafts/
-├── assets/                      # inputs shared by several targets
-├── packages/                    # project Author Packages shared by targets
-├── hypit.runtime.json
-└── package.json
-```
-
-A target may have several Author Sources, Recipe Sources, and Runs. Re-running one Run creates another
-Build, not another target. Keep files for one target together so their relationship is readable from
-the filesystem rather than inferred from matching names elsewhere in the project.
-
-For example, one understood reference can support two distinct target works without being copied:
-
-```text
-references/viral-ad/
-productions/product-version/
-productions/short-version/
-```
-
-Each production links to `../../references/viral-ad/` from its own Brief or Treatment and keeps its own
-Sources and Runs.
-
-The CLI finds the project from the command's working directory as described above; Source and Run files may live in any
-subdirectory inside it. Shared assets and packages can stay at project root. Target-specific assets
-stay with that target. A reference file that is also intentionally used in the new film can be
-referenced in place; its documentary role does not require a duplicate.
-
-## Give each document one job
-
-- `ANALYSIS.md` is the current whole-piece understanding of a reference: form, story, recurring
-  systems, relationships, function, and why the work holds together.
-- `TIMELINE.md` connects what happens when with what it does for the viewer. Preserve the content,
-  placement, entry, changes, persistence and exit of the reference's visual systems, their word or
-  action relationships, source times and useful evidence paths. Concurrent picture, speech, Caption,
-  Typography, MG, Effect and Audio behavior belong to the same connected account. These are reference
-  timeline notes; the target's actual placements belong to the `time:Timeline` declaration in Source.
-- `transcript.json` is word-level speech evidence. It is evidence, not the director's interpretation.
-- `evidence/` contains only media worth reopening, with ordinary human-readable names.
-- `BRIEF.md` preserves the user's goal, facts, constraints, requested changes and
-  [agreed paid scope](brief.md#brief-preserves-user-authority).
-- `TREATMENT.md` is the director's current answer to the Brief: the intended new piece in complete
-  creative terms, before implementation details.
-- `authors/`, `recipes/`, and `runs/` are the exact production implementation.
-- `PROGRESS.md` is a short photograph of the work now: the live question, what remains to examine or
-  make, next useful action, real blockers, active Build ids and reusable Results. Keep cost information
-  relevant to the remaining work here when it affects the agreed budget. When handing work
-  over, retain the relevant Run and Runtime Profile, exact Build id and public Output names needed
-  to continue. Run Candidates own
-  the actual reuse choices; the note points to them. Established conclusions belong in their owning
-  document instead.
-
-Rewrite these files when the current truth changes. They are not logs. `PROGRESS.md` may exist beside
-a reference or a production because either kind of work can span conversations; it does not mark a
-stage and can disappear when there is nothing useful to hand over.
-
-Use these files as the working memory across conversations. Write discoveries and decisions into
-their owning documents as the work develops, preserving both the explanation and its concrete
-details. Let provisional accounts grow with the understanding, keeping detailed evidence once and
-linking to its owner. Share the meaning of discoveries in conversation while the files retain the
-full account. Resume by reading the current project files and relevant Skill pages; use Progress to find
-the next question and the saved evidence, Sources, Runs or Results to continue it. A new discovery
-updates the account it changes so the next session inherits the improved understanding.
-
-## Drafts and Results are different things
-
-`drafts/` holds unpublished authoring material that is not part of the current Source: trial copy,
-temporary designs, or media deliberately exported for further work. A Build output remains in that
-Build's Result even if a later Run does not use it. The absence of a later reference already says it
-was not adopted; it does not need to be copied into `drafts/`.
-
-When an output is deliberately exported into the project, place it according to its new role. It may
-become an `asset`, a `draft`, or direct input to another production.
-
-## Hand over an editable production
-
-A finished MP4 is a viewing deliverable. To continue making the piece, the recipient also needs the
-authored work and the produced values that its Runs select:
-
-- Sources, Recipes, Runs, project notes and referenced input assets, keeping their relative layout;
-- project component source or installed-release dependencies, `package.json`, its lockfile and any
-  tarballs referenced by `file:` dependencies;
-- the completed Results used by `build-record` Candidates, including their media and Composite value
-  documents, plus the project Result repository selection;
-- the intended Runtime configuration, with account access configured on the receiving machine through
-  its own Credential Store.
-
-For the default filesystem repository, preserving `.hypit/results/` intact with the project is the
-straightforward handoff. Include the hidden directory and keep its date/Build subdirectories. Some
-Results forward an Output to its original owning Build, so copying only the latest Build directory
-can omit media still in use. A custom filesystem or S3 repository needs the corresponding files or
-access and an explicit destination selection; changing `hypit.results.json` does not move them.
-
-External input files remain live dependencies, including when referenced inside structured Outputs.
-The Node workspace records their resolved file addresses. When moving to another machine, provide
-those inputs and update affected references to their new locations. Copying Result directories alone
-does not collect external files; an explicit `hypit get` export does collect the selected Output's
-referenced bytes.
-
-The recipient installs the selected Distribution and project dependencies, configures their Runtime,
-and inspects the received Results. Planning the intended Run shows whether its reuse choices still
-resolve and what new work remains. Active execution stays with the originating Runtime until that
-attempt ends; an editable handoff carries authored work and required Results rather than the originating
-Runtime's execution state.
-
-`hypit get` is useful when handing over a particular output. Exported image/video/audio files can be
-selected as file Candidates. A Composite export contains `value.json` and its resource files for
-inspection and transport; that document uses the Result value format, whereas a Run `<value>` accepts
-a StoredValue wrapper. To retain a SemanticTake's structured reuse, keep its Result available and use
-`build-record`. [Builds and Results](../production/builds.md) explains repository selection and export.
-
-## Resume from present facts
-
-After interruption or context compaction, read the current Brief, Treatment, reference archive,
-Source, Recipe, Run, and the short `PROGRESS.md` that applies. Then inspect the project's actual Build
-Results and Runtime status. Continue from usable outputs already present; loss of conversation context
-is not a reason to submit the same paid work again.
-
-A command interruption or missing reply can leave the Worker running. [Builds](../production/builds.md)
-explains how to identify active work and continue through a new Run after a failed attempt.
-Completed Outputs remain in Results without being exported as files. Keep or add their Run Candidates
-when revising downstream work; neither the notes nor an unchanged output name selects them automatically.
-
-## Keep review notes with the work
-
-Studio's `FEEDBACK.json` belongs to the workspace and records timestamped comments for its Runs.
-[Working from Comments](../production/studio.md#revise-from-timestamped-comments) explains reading,
-resolving and preserving these shared notes. Carry settled creative choices into Treatment and
-execution progress into Progress; retain comments as the review conversation.
+DELIVERY注明真实出口文件/版本、声画回查范围、实际时长及具体未解决问题。按[接受证据](../production/acceptance-evidence.md)记录观察，不另建评分表。旧SVRun工程的Results/候选必须继续保留，搬迁时按[Builds](../production/builds.md)核实依赖；普通直接H3工程无需引入它。

@@ -64,7 +64,7 @@ Script document types. A family Track accepts `document`, `timeline` and ordered
 ```svml
 <keyword:Track id="captions" document={story.caption} timeline={program.timeline}>
   <keyword:Use style={base-style}/>
-  <keyword:Use role="GUEST" style={guest-style}/>
+  <keyword:Use role="CHARACTER" style={character-style}/>
   <keyword:Use during={story.selection.punchline} style={punchline-style}/>
 </keyword:Track>
 ```

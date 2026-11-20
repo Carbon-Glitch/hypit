@@ -13,7 +13,7 @@ production. Its author interface can be as small as the work requires.
 ## Find the relationship worth giving a name
 
 Start with the viewer's experience: a comparison becomes clear, an answer resolves a question, a
-ranking accumulates, or a phrase lands with particular emphasis. Explain what appears, why it appears
+a narrative clue accumulates, or a phrase lands with particular emphasis. Explain what appears, why it appears
 there, what changes, and what the viewer should retain afterward. That explanation suggests both
 the visual design and the component boundary.
 
@@ -59,66 +59,18 @@ change their implementation. Consider likely revisions to reveal tangled respons
 inputs, rather than treating every possible edit as a parameter to implement in advance. Even repeated
 use can share the same fixed treatment. Interface breadth and reuse count do not measure component quality.
 
-For example, a backdrop and an editor demonstration have different jobs and can be organized
-separately. The editor can keep its button sizes, panel spacing, illustrative labels and pointer paths
-inside its implementation. Its pointer, dragged image and target slot share geometry and belong
-together. Supply the actual assets and speech-linked events through author inputs; expose Caption
-placement or color when those are useful adjustments. This gives the piece clear structure without
-turning the illustrated editor into configurable editing software.
-
-Choose peer Tracks for independently composed contributions, internal parts for a coordinated scene,
-and ordinary modules for code organization. These boundaries need not coincide with parameter or
-package boundaries. Splitting files helps maintenance; a named Track around a whole passage gives
-it occupancy. Judge both by whether they clarify the actual responsibilities. The spoken outline
-supplies timing context: several passages may develop one object, and one passage may contain
-several independent objects. Sharing a Moment does not by itself require a shared Track.
-
-## Keep implementation changes local
-
-Use the work's revisions to check its boundaries: a change to one visual responsibility should
-remain with its owner, while a shared change should flow through a shared dependency. When an edit
-requires reconstructing the same decision across several scenes, consolidate that decision's source.
-The aim is to make the relationship explicit, whether its owner is a fixed implementation or an author input.
-
-A useful revision question is: if delivery pauses before the result, which event should move and
-which local design should stay? Inspect the input that carries that event rather than counting how
-many parameters the component exposes. If the work needs a qualitatively different relationship,
-change its implementation or define a new component instead of accumulating speculative mode flags.
-
-Keep revisions local as the scene grows. Separate independently edited scene bodies, styling and
-frame evaluation into ordinary source modules while sharing their actual mechanics. A palette,
-typing function or media-sampling helper can be an ordinary project dependency; it needs no Surface
-or Track of its own. A shared package becomes useful when several components really use it.
-Source connects selected assets, semantic events and the component's external choices; these modules
-own their realization, including any fixed design specific to this piece.
-
-Derive related geometry from one layout. A pointer's destination should come from the target it
-clicks; an attached badge should follow its pointer; two presentations of one playing source should
-share their sampling. Then revising a layout changes its dependent motion with it.
-
-Choose visual grouping and timing independently. A combined scene can respond to spoken Moments;
-separate Tracks can share an authored event. What belongs together on the canvas does not decide
-what gives that behavior its time.
-
 Fine Caption similarly offers reusable flowing text, while a custom Caption family can own a new
 relationship among words and graphics. Both consume Script wording and semantic timing. Shared
 behavior can keep these visuals together; [Caption authoring](caption-authoring.md) explains the
 specialized text inputs and the same freedom to compose.
 
 Give a reusable scene the prepared performance, its outer Window and the Moment that changes its
-layout through the Timeline and shared temporal projections. Replacing a product or rewriting the
+layout through the Timeline and shared temporal projections. Replacing a scene asset or rewriting the
 Script then changes content and semantic anchors while preserving the behavior. The final frame
 positions come from the placed Takes.
 
-The repository's [video examples](https://github.com/hypit-ai/hypit/tree/main/examples) show different
-applications: a persistent ranking board, related podcast views, a shared interview encounter and
-coordinated explainer scenes. Trace why a behavior has its owner, what drives its time, and which
-inputs a changed brief would replace. Their notes explain those choices; the scene lists are each
-production's design. In the explainer, scenes retain fixed internal details while Script events,
-Caption and presenter framing remain independently authored.
-For that whole-work relationship, read [Presenter-led visual explainers](../playbooks/formats/presenter-led-explainer.md).
-The [explainer's craft notes](https://github.com/hypit-ai/hypit/blob/main/examples/complex-explainer/productions/explainer/CRAFT-NOTES.md)
-trace concrete revisions back to their design decisions and source owners.
+Use the current drama storyboard and actual title/effect handoff as the concrete
+component brief. Trace what drives the timing and what a changed scene should replace.
 
 ## Let meaning drive the behavior
 
@@ -146,7 +98,7 @@ inside one authored event interval may use normalized progress there; it needs n
 animation key. Meaningful event location and the designed duration/shape of motion are different choices.
 
 Choose the temporal input from what the component does. A picture covering an explanation occupies
-its Selection. An answer revealed on a word can remain visible after that word ends. A ranking item
+its Selection. An answer revealed on a word can remain visible after that word ends. A clue
 may move during a reveal Window and stay in its settled row afterward. The board's outer lifetime,
 the trigger and the resulting state each have a clear meaning.
 
@@ -174,14 +126,14 @@ its internal layout can derive from those few inputs. One meaningful control can
 details while preserving a designed whole. Semantic triggers remain valuable even for a scene used
 once: they connect its behavior to the actual performance without exposing every animation detail.
 
-When reuse is needed, support the actual variation: longer names, another product or a different
+When reuse is needed, support the actual variation: longer names, another scene asset or a different
 number of rows. A new visual relationship may deserve another component.
 [Caption craft](../playbooks/craft/captions.md#caption-families-styles-and-parameters) illustrates
 family, Style and parameter choices for a commonly reused role.
 
 ## Design the component in its frame
 
-Judge it beside the presenter, coverage, Caption and other graphics it will share the picture with.
+Judge it beside the character, coverage, Caption and other graphics it will share the picture with.
 Give the eye a clear entry point, useful grouping and a settled state that remains readable. The
 component's local palette, density and motion should support the whole composition's hierarchy.
 
@@ -212,6 +164,5 @@ adjustments the user needs, such as Caption position and color, through the exis
 An empty parameter panel alone is no reason to widen the component interface.
 [Companion authoring](studio-companions.md) owns those bindings.
 
-For an existing example, read the installed `@hypit/ranking` README and the part of its implementation
-that answers the current question. It connects semantic reveals, settled state, layout and editor
-entities. Carry the relevant relationship into the project component's own design.
+Read the installed author-kit and the closest necessary component to resolve the
+specific implementation question; carry only that mechanism into this drama.

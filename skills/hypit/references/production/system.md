@@ -60,7 +60,7 @@ including events attached to speech.
 ## One Canvas provides the work's space
 
 The **Canvas** supplies picture dimensions and coordinates. A Frame locates a destination; fitting
-maps a source's real extent into it. Components own their internal layout and motion. A presenter
+maps a source's real extent into it. Components own their internal layout and motion. A character
 and diagram can share a scene, while an independent title remains a peer. Frames may overlap, nest,
 move or extend beyond the canvas.
 

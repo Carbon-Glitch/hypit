@@ -77,6 +77,11 @@ these details.
 
 ## Plan the selected Run
 
+For continuity-sensitive drama, also resolve [request controls](request-controls.md): actual input
+roles, compatible operation, accepted versions and dependent shot boundaries. A custom runner must
+check its serialized media bindings before submission; a native plan validates its declared graph
+and Provider support, not the generated performance's visual or audible quality.
+
 `hypit plan` inspects an authored Run's execution demands. The creative direction shared with the
 user develops earlier from their request and reference evidence; it does not require a Run, a fully
 prepared environment or this command. Use the command when there is concrete execution to inspect.
@@ -277,9 +282,9 @@ select another adapter such as S3 without changing these commands or the Run.
 Give useful Results presentation metadata when it helps people and Studio find them:
 
 ```bash
-hypit result edit <build-id> --title "podcast take · coral captions" \
+hypit result edit <build-id> --title "drama take · coral captions" \
   --note "speaker timing and framing for the current production" \
-  --highlight podcast-take.video
+  --highlight drama-take.video
 ```
 
 The title, note, and highlights live in that Result manifest. They do not rename its public Outputs

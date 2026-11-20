@@ -1,3 +1,5 @@
+> **Carbon-Glitch customization:** The customized Agent-first skill is in [skills/hypit](skills/hypit/README.md). Install it with `npx skills add Carbon-Glitch/hypit --skill hypit -g`. The upstream runtime and examples below are retained.
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./docs/public/hypit-logo-light.svg">

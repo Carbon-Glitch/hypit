@@ -1,75 +1,24 @@
-# Production playbooks
+# Video formats and craft routes
 
-Read this when the current work needs format or craft knowledge beyond the Creation and Production
-references. Playbooks help the Agent direct a work; the Source and Run remain the author's.
+For UGC, podcast, interview, ranking, explainer, narration, screen work or MG, use the [general format/craft index](../general/references/playbooks/index.md). Mixed work can combine that branch with the local drama craft below.
 
-## Combine two scales
+The existing source/target storyboard, needed design and actual footage determine which craft to load. Read only the local questions needed to make this short drama; exact Surface/Kit syntax remains in installed package documentation.
 
-A **format** describes a recurring whole-work relationship: who carries the argument, how attention
-moves, and what kind of reveal or payoff holds the piece together. A **craft** addresses one local
-directing problem that can appear in many formats: Caption, B-roll, continuity, image generation,
-sound, or graphic composition.
-
-Use the reference Analysis and Timeline, the target Brief and Treatment, and the visible Source to
-choose what is relevant now. One work may draw from several formats and several crafts. A new or
-hybrid form may need craft pages without matching any format page.
-
-The pages below own stable cross-work directing knowledge. When none fits the current question, use
-the project's Analysis, Timeline, Brief, Treatment, Source, and visible Results directly. A work does
-not need a matching playbook before it can be understood or made.
-
-## Craft
-
-| Read | When the current question concerns |
+| Question | Read |
 | --- | --- |
-| [Directing generated images](craft/image-direction.md) | directing the picture a work needs, including people, places, products and icons; phone-video capture, casting, camera relationships and references |
-| [Directing a voice](craft/voice-direction.md) | casting an appealing voice, choosing its vocal character, writing Voice Design direction or selecting a sample line |
-| [Voice and performance](craft/voice-and-performance.md) | what performance carries a passage, recurring voice identity, changing visual use of the same material, or genuinely independent narration |
-| [Directing generated video](craft/video-direction.md) | choosing a generation relationship, deciding when source footage should carry performed action or camera behavior, directing visible speech or silent action, cuts, subject-isolation footage or request duration |
-| [Reference relationships](craft/generated-dependencies.md) | what existing images or footage contribute to a new request: people, places, conversational views, continuing props and new-scene branches |
-| [Material-led pictures and B-roll](craft/b-roll.md) | what an image or video contributes to a passage; full-frame or framed views, exact evidence versus a visual thought, and picture/performance handoffs |
-| [Screen demonstrations](craft/screen-demonstrations.md) | what a website, app, terminal or editor must show; captured states and interactions versus authored explanations, and how viewers follow them |
-| [Caption](craft/captions.md) | speech-linked text, reading rhythm, Fine styles, or a new Caption family |
-| [Caption tracking](craft/caption-tracking.md) | the user's reference visibly uses head-following Caption or the user asks for it; matching face observations to Roles, picture placement and Cue time |
-| [Sound and mix](craft/sound-mix.md) | what existing material already sounds like, which music or effects the work needs, and how those sounds share time and attention |
-| [Graphic composition](craft/graphic-compositions.md) | attention and coexistence of material and graphics, source framing, boards, spatial hierarchy and coordinated palette |
-| [Motion graphics](craft/motion-graphics.md) | how graphics, effects and scenes change over time, carry objects through handoffs, establish a motion language and meet the performance |
+| Characters, scenes, props and clean shot frames | [Image direction](craft/image-direction.md), [reference sheets](../creation/drama-reference-sheets.md) |
+| Audience hearing perspective, emotional progression, music/quiet and scene cue design | [Sound direction](../creation/sound-direction.md) |
+| Voice casting, timbre and sample | [Voice direction](craft/voice-direction.md) |
+| Speaking performance, listeners, inner voice and independent speech | [Voice/performance](craft/voice-and-performance.md) |
+| Generated action, camera, timed reaction, sound and H3 request boundaries | [Video direction](craft/video-direction.md), [director blueprint](../creation/director-blueprint.md) |
+| Exact MiniMax H3 mode fields and notation | [H3 prompts](craft/h3-prompts.md) |
+| Shared people, world, props and adopted states across views | [Reference dependencies](craft/generated-dependencies.md) |
+| Evidence inserts, reaction coverage, memories and scene details | [Narrative inserts](craft/b-roll.md) |
+| Performance selection, viewer attention, reaction cuts and compact dramatic rhythm | [Drama editing](../production/drama-editing.md) |
+| Dialogue subtitles and reading rhythm | [Captions](craft/captions.md) |
+| An actual requested/source-observed head-following text effect | [Caption tracking](craft/caption-tracking.md) |
+| Physical/off-screen sound, score, meaningful silence and mix | [Sound/mix](craft/sound-mix.md) |
+| Narrative titles, in-world text and graphic effects | [Graphic composition](craft/graphic-compositions.md), [motion/effects](craft/motion-graphics.md) |
+| Dramatic passage, shared coverage and scene causality | [Short drama](formats/short-drama.md) |
 
-Read every craft whose question genuinely appears in the work, including questions discovered after
-a Studio preview or completed Result. Repeated use of the same craft does not require rereading it
-unless the decision has changed.
-
-For authoring those decisions, [Performance](../production/performance.md) presents current Timeline
-footage and [Media](../production/media-presentation.md) supplies independent pictures and playback.
-[Media preparation](../production/media.md#keep-original-and-processed-material-explicit) owns source
-processing, including transparency; [Spatial layout](../production/spatial.md) owns fitting and crop.
-These choices compose according to the intended use of the material.
-
-## Examples
-
-| Read | When a concrete directing example would help |
-| --- | --- |
-| [Image direction examples](craft/examples/image-direction.md) | four-paragraph production prompts for the balcony portrait and five reviewed character portraits |
-| [Conversation image examples](craft/examples/conversation-images.md) | complementary podcast and interview views, product references, lifestyle B-roll, and changing camera relationships |
-
-## Formats
-
-| Read | When the work's shape includes |
-| --- | --- |
-| [UGC and talking-head performance](formats/talking-head.md) | one person directly addressing the viewer, with natural edited performance |
-| [Short drama](formats/short-drama.md) | characters, relationships, actions and changing dramatic settings carrying the story as rich A-roll |
-| [Two-person podcast](formats/two-person-podcast.md) | complementary host views, conversational reactions, product interaction or lifestyle coverage |
-| [Street interview](formats/street-interview.md) | a motivated encounter, guest/interviewer/shared views, reveals or tracked Caption |
-| [Ranking and listicle](formats/ranking-listicle.md) | a persistent comparison or board whose state changes with the argument |
-| [Presenter-led visual explainer](formats/presenter-led-explainer.md) | spoken performance joining evolving demonstrations and MG, with the presenter moving between full-frame, inset and covered views |
-| [Narration-led work](formats/narration-led-demo.md) | independent narration organizing products, hands, screens, demonstrations, montage, or MG |
-
-A format page is useful when its relationships illuminate this work. It is not a category the
-project must declare, and its examples do not limit what the work may combine or invent.
-
-## Continue at the owner
-
-Once a playbook identifies the needed role or relationship, use `hypit vocabulary <package>` and the
-owning package README for exact Surfaces, ports, fields, and model options. Creation references own
-the work's understanding and intention; Production references own Source, Run, preview, Build, and
-Result behavior. Project files own the facts and decisions of the current work.
+For implementation use [Production](../production/index.md). The full target storyboard owns ordinary recreation's story/dialogue; needed design and any commissioned literary body remain with their existing owners. Actual EDIT and source media own execution clocks.

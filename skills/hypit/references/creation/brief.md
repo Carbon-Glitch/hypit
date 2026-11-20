@@ -1,93 +1,58 @@
-# Brief and Treatment
+# Brief and Treatment for short drama
 
-Read this whenever a target video is being defined, whether it begins from a reference, a loose idea,
-an existing project, or a requested revision.
+Read when defining a new short drama or revising one. [Preproduction content](drama-preproduction.md) covers world, characters, audiovisual direction and the complete story/shot execution. These are content responsibilities, not five required files; DESIGN may include Brief/Treatment sections.
 
 ## Brief preserves user authority
 
-`BRIEF.md` records what the user wants and what only the user can authoritatively supply. It can be as
-short as one sentence when that sentence is sufficient:
+`BRIEF.md` records the commissioned scope, audience and intended experience, source references, language/localization, episode count/duration/aspect, explicitly preserved details, delivery and budget. Preserve the user's wording where reinterpretation would change the result. A recreation request defaults to **体验保真、形式自由、改编增值**: design surface form freely while preserving the separately testable core experiences and causal/relationship obligations.
 
-> Faithfully recreate this reference, but replace the presenter with the cat in `assets/miso.jpg` and
-> the product with Hypit.
+Casting, world/art, props, coverage and effects can be redesigned within that commission. Record purposeful improvements, retain subtle experience-bearing details, and ask only for consequential unresolved goals, required private facts, materially changed core experience or spending outside existing authority. Explicit literal requests retain their named forms. [Fidelity](fidelity-contract.md) supplies the decision boundary; H3 difficulty never authorizes a hidden emotional downgrade.
 
-Add only facts that matter to the work, such as:
-
-- the intended outcome, audience, platform, deliverable, or business purpose;
-- the claim, product truth, offer, CTA, language, and facts that must remain accurate;
-- references and what the user wants inherited from each;
-- requested replacements, additions, removals, or style changes;
-- private identity assets and exact brand material;
-- hard duration, format, budget, or delivery constraints;
-- choices the user explicitly reserves for themselves.
-
-Quote or closely preserve the user's wording where reinterpretation could change the request. Do not
-expand an example video's Hook into a format rule or mix implementation choices into the Brief.
-
-In a faithful adaptation, unmentioned relationships normally inherit from the reference: structure,
-the role of each layer, the promise/payoff relationship, and the visual or audio systems that make the
-piece work. This is a starting interpretation, not pixel copying. Ask the user only when the available
-facts leave materially different goals, private facts, meaningful value choices, deliverables, or
-spending authority unresolved. Routine casting, art direction, shot choice, Caption treatment,
-component design, prompts, and implementation belong to the Agent.
-
-Preserve the user's agreed paid scope here as a production constraint: the billing accounts identified
-by non-secret labels or Endpoint references, the work they cover, and the accepted estimate, range or
-budget. Retain any limits the user attached to that agreement. Distinguish your proposed estimate
-from what the user has accepted, and an estimate from a firm spending ceiling. Keep the agreement
-current when the user changes it so another conversation can continue under the same authority.
-Record their local or hosted setup choices and accepted preparation in the same ordinary language.
-The Runtime Profile expresses how to execute those choices; Brief preserves what the user agreed to.
-[Builds](../production/builds.md#work-within-the-agreed-paid-scope) owns how it applies to paid work.
+Preserve agreed paid accounts by non-secret labels, the covered transcription/generation/processing work and accepted estimate/range/ceiling. A configured account establishes access; the agreement establishes spending authority. Carry settled authorization across this commission, with remaining work and cost visible. [Builds](../production/builds.md#work-within-the-agreed-paid-scope) owns estimates and submission.
 
 ## Treatment is the director's answer
 
-`TREATMENT.md` turns the Brief, relevant reference understanding, and current creative judgment into
-one complete creative design for the new work. It can cover:
+`TREATMENT.md` explains how this target works: attraction, character tactics and relationship changes, causal movement, expectation/reveal/payoff, sound and editing rhythm, and source-to-target mechanism changes. Link the actual design/story owners and accepted assets instead of duplicating their facts. This may be a section in DESIGN, not a separate Treatment file.
 
-- the creative premise and viewer experience;
-- story movement, Hook, reveal, payoff, and CTA;
-- target pacing and the jobs of major passages;
-- character, performance, camera, locations, and visual world;
-- A-roll, B-roll, Caption, Typography, MG, Effect, and Audio systems that the target actually needs;
-- how requested transformations propagate through those systems;
-- which generated or supplied media will act as identity and continuity anchors;
-- open creative questions that genuinely prevent the design from becoming specific.
+For adaptation, use [source deconstruction](source-deconstruction.md) and its canonical source context,
+not a synopsis newly inferred from the target script. Link whole-work promise/causality, applicable
+serial setup/payoff, narrative order, evolving grammar and cultural functions to the chosen EX/scene.
+Record in the relevant Treatment passage: source basis → user change → selected mechanism →
+expected gain/loss → required order/coverage → observable target condition and test.
+Existing observations stay at their source owner; DESIGN or existing design owners and the full STORYBOARD
+own the resulting target choices; a needed literary story body remains its single story owner. A global rule can link several EX units without generating a
+second per-shot catalogue. Proposed improvements are not audience-proven gains.
 
-Write in director language. The Treatment may say that a ranking portrait accumulates into a board or
-that a second podcast angle reverses the eye line while preserving the shared counter and light. It
-does not need package names, element attributes, provider selection, Build order, or Result ids. Those
-belong to production files.
+Use [aesthetic direction](aesthetic-direction.md) to settle viewer position, subtext and an
+organizing image/sound relationship. Compare genuinely different mechanisms only for unresolved
+pivotal choices. For example, a redesigned handoff may hide the object longer, use a clearer
+insert and give the listener a readable consequence; the viewing test must check each gain/loss.
 
-Describe how the intended appeal reaches the viewer. If contrast carries the premise, say what
-expectation the piece sets up and how its words, situation, reveal or response play with it. The
-difference can suggest an idea; the piece still needs to express what makes that idea compelling.
-Give the performer a clear attitude toward the subject and listener. Let
-[voice direction](../playbooks/craft/voice-direction.md) and
-[video direction](../playbooks/craft/video-direction.md) carry the choice into casting and performance.
+When language, period or world changes, preserve the behavior's tactic, social leverage and causal
+credibility through natural new words/actions. Known source-only context and unavailable later
+episodes remain scoped unknowns. Settled routine changes proceed within Brief; only a material
+unresolved core-experience/explicit-form change requires a new scope decision.
 
-Reference Analysis says why the old piece works; Treatment says what the new piece will be. Original
-work reaches Treatment from the Brief, relevant examples, and the Agent's judgment rather than from
-one dominant reference. These are different sources of creative evidence.
+Original drama develops from Brief and documented choices without inventing a source analysis.
+Technical package names, payloads, Build order and Result IDs belong to implementation owners.
 
-## Keep one formal Script
+## Keep one story/dialogue owner and derive execution text
 
-The spoken wording becomes authoritative only in the Author Source's `<script>`. During drafting, copy
-may live in `drafts/`; once adopted, move it into Source and stop maintaining a second full transcript
-in Brief or Treatment. Brief can preserve mandatory claims or exact user-supplied phrases. Treatment
-can describe what each passage must accomplish. Source owns the actual words, roles, Cue breaks,
-Selections, and Moments.
+Choose literal, bounded_adaptation, reimagining or original under
+[adaptation and dialogue](adaptation-and-dialogue.md). Preserve the actual user change boundary,
+key attraction mechanisms and consequential dialogue dispositions. The director's preferences for
+restraint, clarity or closure do not automatically broaden that boundary. New rules can remain
+offscreen; only necessary understanding belongs in the performed story.
+
+For ordinary recreation, the complete STORYBOARD owns all story action, exact dialogue, coverage and process. New plot, substantial motive/rule/causality changes or a screenplay commission need a full literary story body, either in SCREENPLAY or an existing section; when present, it owns story/words and the storyboard expands it faithfully. SVML and H3 derive execution text from that current owner. Revise it first and synchronize only affected consumers; actual aligned media owns adopted seconds. Do not maintain independently editable transcripts.
 
 ## Revise the owner of the changed fact
 
-- A changed user goal, claim, constraint, or requested substitution changes the Brief.
-- A changed story, shot logic, visual system, performance, or creative approach changes the Treatment.
-- A prompt refinement, component geometry correction, Candidate choice, or timing-expression fix that
-  preserves the same design changes Source, Recipe, Run, a project package, or generation input—not
-  the Treatment.
-- New evidence about the reference changes its Analysis or Timeline; it may then cause the director to
-  reconsider Treatment.
+- User scope/goal/budget changes revise Brief.
+- Adaptation/experience choices revise Treatment and affected design/story owners.
+- Story/words revise the current owner (STORYBOARD for ordinary recreation, full literary body when used), then affected coverage, execution Script, sound and prompts.
+- World/person/visual rules revise their respective document and affected consumers.
+- Request refinement, component correction or candidate selection preserving the design revises implementation/inputs and dependent evidence.
+- New source observations revise SOURCE_SHOTS and its declared context dependencies and invalidate affected target comparisons.
 
-Studio and built Results make the current design visible. If the work looks wrong because the
-design itself was wrong, revise Treatment. If the design is sound and its implementation is wrong,
-repair the production. Brief changes only when the user's truth changes.
+Studio and real outputs make the target reviewable. Repair the earliest wrong owner while retaining still-correct accepted work; notes and file names do not establish media acceptance.

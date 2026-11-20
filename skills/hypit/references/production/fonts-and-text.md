@@ -40,14 +40,14 @@ same Cue. The renderer uses the exact supplied faces and disables synthetic bold
 
 Installed fonts are useful source material. Select their actual files and declare them as assets,
 so the chosen face travels with the build instead of depending on a family name existing on another
-machine. For example, a project can use a local brand face alongside an explicit Chinese fallback:
+machine. For example, a project can use a local project face alongside an explicit Chinese fallback:
 
 ```svml
 <import as="asset" from="@hypit/media@1"/>
-<asset:Font id="brand-font" src="./assets/fonts/brand-semibold.woff2" weight="600" style="normal"/>
+<asset:Font id="project-font" src="./assets/fonts/project-semibold.woff2" weight="600" style="normal"/>
 <fonts:Face id="chinese-font" family="noto-sans-sc" weight="600" style="normal"/>
 
-<caption-fine:Style id="caption-style" recipe={look.caption.primary} font={brand-font}>
+<caption-fine:Style id="caption-style" recipe={look.caption.primary} font={project-font}>
   <caption-fine:Fallback font={chinese-font}/>
 </caption-fine:Style>
 ```
@@ -66,7 +66,7 @@ face, or export it with a font tool when permitted, before declaring it.
 
 ## Find a face when the available choices do not fit
 
-Start with the user's brand assets and the relevant local or bundled faces. If the work calls for
+Start with the accepted visual assets and the relevant local or bundled faces. If the work calls for
 another face, look at the foundry's or an open-font project's official specimen and download. Check
 the actual script coverage, available weight/style and intended use, then bring the chosen file into
 the project. Keep its source and license with it, especially when sharing the editable project.

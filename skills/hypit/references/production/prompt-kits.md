@@ -15,10 +15,14 @@ repeated choice improves real productions, rather than splitting every sentence 
 [video direction](../playbooks/craft/video-direction.md) guide what the prompt should accomplish.
 Choose a Kit whose fixed assumptions serve that intention:
 
-| Direction needed | Where to look |
-| --- | --- |
-| The fixed phone-video capture wording, followed by Person, Shot and Setting | The installed `@hypit/gpt-image-kits` README and its `phone-ugc-v1` template |
-| A speaking performer, podcast, street encounter, video call, silent B-roll, or motion/camera transfer | The installed `@hypit/seedance-kits` README and its corresponding exported template |
+For drama, use the current VISUAL/ASSETS and [cinematic look](../creation/cinematic-look.md)
+when applicable. Keep a project-local image/look treatment and compile video through the
+[official H3 format](../playbooks/craft/h3-prompts.md). Read any chosen installed template
+for exact fields, avoiding inherited capture/acting assumptions that conflict with this scene.
+After Kit expansion, apply [reference-first compilation](../playbooks/craft/h3-dense-direction.md#参考负责静态事实正文负责差异与过程)
+to the actual final text: a fixed block must not repeat appearance supplied by connected assets,
+and a shared camera/voice/scope clause must not be appended again by every slot. Preserve all
+unique process, dialogue and attention conditions when consolidating duplicate wording.
 
 These are packaged Sources, so their README and exported `.svs` files supply the template names,
 Text slots, defaults and Recipe choices. A package's Surface vocabulary serves a different role:
@@ -44,51 +48,51 @@ and includes a screen note only when the render selects it:
 ```svs
 <?svml using="@hypit/text/svs@1"?>
 
-<sheet version="1" id="phone-shot">
-  text-template.phone-shot {
+<sheet version="1" id="drama-shot">
+  text-template.drama-shot {
     separator: paragraph;
     default-camera: handheld;
     default-screen: false;
   }
 
-  text-template.phone-shot.block.capture {
+  text-template.drama-shot.block.capture {
     kind: fixed;
     order: 10;
-    text: "A frame from naturally captured phone video, with coherent texture and lighting.";
+    text: "A photographed drama frame with coherent material, light and spatial relationships.";
   }
 
-  text-template.phone-shot.block.camera {
+  text-template.drama-shot.block.camera {
     kind: axis;
     order: 20;
     parameter: camera;
   }
-  text-template.phone-shot.choice.camera.handheld {
+  text-template.drama-shot.choice.camera.handheld {
     text: "The camera has a believable handheld relationship to the subject.";
   }
-  text-template.phone-shot.choice.camera.locked {
+  text-template.drama-shot.choice.camera.locked {
     text: "The camera remains still while the subject carries the action.";
   }
 
-  text-template.phone-shot.block.screen-note {
+  text-template.drama-shot.block.screen-note {
     kind: variant;
     order: 30;
   }
-  text-template.phone-shot.choice.screen-note.present {
+  text-template.drama-shot.choice.screen-note.present {
     when-param-screen: true;
     text: "Keep the supplied interface physically contained and readable on its screen.";
   }
 
-  text-template.phone-shot.block.shot {
+  text-template.drama-shot.block.shot {
     kind: slot;
     order: 40;
     slot: shot;
   }
-  text-template.phone-shot.block.direction {
+  text-template.drama-shot.block.direction {
     kind: slot;
     order: 50;
     slot: direction;
   }
-  text-template.phone-shot.block.references {
+  text-template.drama-shot.block.references {
     kind: slot;
     order: 60;
     slot: references;
@@ -118,14 +122,14 @@ produced elsewhere remains a graph edge rather than being copied into a scalar b
 <?svml using="@hypit/markup@1"?>
 <svml>
   <import as="text" from="@hypit/text@1"/>
-  <import as="kit" source="./phone-shot.svs"/>
+  <import as="kit" source="./drama-shot.svs"/>
   <import as="recipes" source="./look.svs"/>
 
-  <text:Value id="shot">A close half-body vertical view with room above the presenter.</text:Value>
-  <text:Value id="direction">A confident presenter speaks in a lived-in studio.</text:Value>
-  <text:Value id="reference-roles">The first image supplies the presenter's identity.</text:Value>
+  <text:Value id="shot">A medium close-up of the listener with the doorway visible behind her.</text:Value>
+  <text:Value id="direction">She waits for an answer, keeping the sealed envelope out of view.</text:Value>
+  <text:Value id="reference-roles">The first image supplies the listener's accepted identity and current look.</text:Value>
 
-  <text:Render id="prompt" template={kit.phone-shot} recipe={recipes.prompt.main}>
+  <text:Render id="prompt" template={kit.drama-shot} recipe={recipes.prompt.main}>
     <text:Param name="camera" value="locked"/>
     <text:Param name="screen" value="true" type="boolean"/>
     <text:Set name="shot" text={shot}/>
@@ -135,7 +139,7 @@ produced elsewhere remains a graph edge rather than being copied into a scalar b
 </svml>
 ```
 
-Save the template above as `phone-shot.svs`. For this example, `look.svs` can be:
+Save the template above as `drama-shot.svs`. For this example, `look.svs` can be:
 
 ```svs
 <?svml using="@hypit/svs@1"?>

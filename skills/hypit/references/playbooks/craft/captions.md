@@ -27,7 +27,7 @@ For choosing Chinese, Latin or mixed-script faces, using a local font or finding
 
 Use the reference to understand what its captions contribute: how they group speech, emphasize an
 idea, establish a speaker or fit around the picture. Carry those relationships into the new work
-when they serve its Brief. A new language, performer, product or tone can call for a different face,
+when they serve its Brief. A new language, performer or tone can call for a different face,
 grouping, placement or motion. Direct that treatment from the new Script's meaning and the video's
 vibe, and record the choice in Treatment and its Recipe.
 
@@ -37,7 +37,7 @@ energy inform that judgment rather than prescribing a fixed Cue length or one ca
 
 Choose the reading phrase, its layout and its emphasis together while keeping their responsibilities
 clear. A meaningful phrase may wrap over two lines; one line may stay fully visible while its spoken
-word changes color. Hiding a caption for a demonstration changes presentation, not the Script or the
+word changes color. Hiding a caption at a reveal changes presentation, not the Script or the
 performed speech. The following sections connect these decisions to the actual picture.
 
 ## Keep wording and timing in their owners
@@ -89,7 +89,7 @@ to preserve spelling or spaces.
 ### Choose emphasis independently of grouping
 
 The same timing supports a stable complete Cue, current-word or current-character color, or a trail.
-A stable phrase can let the viewer follow a detailed demonstration while still reading the speech.
+A stable phrase can let the viewer follow a detailed action while still reading the speech.
 An active-word response can draw attention to its delivery; a whole-expression response can give a
 name or punchline one visual accent. Choose from the intended viewing rhythm. Character-level timing
 remains available even when the design keeps the whole phrase steady.
@@ -121,31 +121,6 @@ more room, Fine can wrap the same Cue over several lines. An independently arran
 with supporting text can instead belong to a new Caption family. Choose the structure for the
 picture and meaning; a visual line break alone is not a reason to add another `||`.
 
-For example, these groupings preserve short ideas in each language:
-
-```svml
-<explanation><HOST>
-  One reference can rebuild ||
-  the shots and pacing, ||
-  the captions and effects, ||
-  around your product.
-</explanation>
-
-<explanation-zh><HOST>
-  一张参考图 || 就能重新设计镜头和节奏，||
-  让字幕和特效 || 为你的产品服务。
-</explanation-zh>
-
-<explanation-ko><HOST>
-  참고 영상 하나로 || 촬영과 편집의 리듬을 바꾸고, ||
-  자막과 효과를 || 제품에 맞출 수 있어요.
-</explanation-ko>
-```
-
-These are alternative Script excerpts, not a bilingual performance. Another width or delivery can
-justify a different handoff. The sentence supplies semantic structure; the presentation says how
-much of that structure should share one screen state.
-
 Fine's optional `max-words-per-line` inserts visual line breaks by display-unit count. In Chinese,
 that count is usually characters. Leave it unset for ordinary width-based flow; choose it when a
 deliberate counted row serves the design. `max-lines` checks those counted rows and requires that
@@ -168,9 +143,9 @@ film's visual language. Use an existing Style when it expresses that relationshi
 coordinated text and decoration in a project Caption family. Let the decoration's extent, position
 and movement answer the text it supports.
 
-Treat Caption, icons, flashes and other graphics as a composition. A guest color and answer accents
+Treat Caption, icons, flashes and other graphics as a composition. Character colors and key-word accents
 can work together without coloring every system identically. Check readability across
-light and dark frames, avoid hiding the important face or product, and allow enough space above a
+light and dark frames, avoid hiding the important face or prop, and allow enough space above a
 tracked head for the whole Cue rather than only its anchor.
 
 Ordinary Caption placement belongs to the chosen family's layout and Style: it can hold a stable
@@ -206,16 +181,16 @@ overrides, Segment-wide selections, word attributes and hiding selected captions
 
 ## Reuse Fine or author a new family
 
-UGC, podcast and interview work can use `@hypit/caption-fine`. Fine supports exact fonts,
+Short-drama dialogue can use `@hypit/caption-fine`. Fine supports exact fonts,
 placement and anchors, wrapping, Cue boxes, active-word treatment, lead/tail and motion through
-explicit Style Recipes. Role overrides can distinguish podcast hosts; a tracked head can supply a
+explicit Style Recipes. Role overrides can distinguish dramatic speakers; a tracked head can supply a
 moving placement point without changing the verbal pipeline.
 
 ```svml
 <caption-fine:Track id="captions" document={story.caption}
   timeline={speech.timeline}>
     <caption-fine:Use style={primary-caption}/>
-    <caption-fine:Use role="GUEST" style={guest-caption}/>
+    <caption-fine:Use role="CHARACTER" style={character-caption}/>
   </caption-fine:Track>
 ```
 

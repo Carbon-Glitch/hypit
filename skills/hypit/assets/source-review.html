@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hypit · 原片回看</title><style>/*SOURCE_REVIEW_CSS*/</style></head>
+<body><header><div><p class="eyebrow">HYPIT / SOURCE REVIEW</p><h1 id="title">原片回看</h1><p class="sub">源表派生视图 · 原镜号与原时钟 · 只读</p></div><a href="source-review.json" target="_blank">测量与来源记录 ↗</a></header>
+<div id="stats" class="stats"></div><main><section class="viewer"><video id="video" controls playsinline preload="metadata"></video><div class="controls"><label class="file">选择本地原片<input id="file" type="file" accept="video/*"></label><button id="previous">← 上一镜</button><button id="next">下一镜 →</button><span id="player-status">加载原片…</span></div>
+<p class="hint">网页若无法自动读取原片，请选择对应本地文件。播放器保留原片声音；页面记录不等于已听审。</p><nav id="timeline" aria-label="原片镜头时间轴"></nav>
+<section class="selected"><div class="selected-head"><h2 id="selected-id"></h2><span id="selected-time"></span></div><div id="selected-pair" class="pair"></div><p id="motion" class="hint"></p><div id="details"></div></section>
+<details class="sheet-panel"><summary>成对联系表 · 同位置 a / b 对照</summary><p class="hint">a / b 为镜内15% / 85%附近的实际帧，不是完整表演或精确首尾状态。关键过程仍须回看中段。</p><div id="sheets"></div></details></section>
+<section class="index"><div class="filters"><input id="search" type="search" placeholder="镜号、人物、台词、音乐或任意维度" aria-label="搜索镜头"><select id="filter" aria-label="筛选"><option value="all">全部镜头</option><option value="notes">有复查提示</option><option value="unknown">含未知项</option></select><select id="sort" aria-label="排序"><option value="timeline">源片顺序</option><option value="long">长镜优先</option><option value="short">短镜优先</option></select></div><p id="count" class="hint"></p><div id="cards"></div><p id="empty" hidden>没有匹配的镜头。</p></section></main>
+<footer>本页不编辑源表、不自动补切或重编号。像素变化只供复查，不能证明摄影机运动、表演或观众体验成立。分享时保留 frames / sheets；视频仍由原文件或本地选择提供。</footer>
+<script type="application/json" id="source-data">SOURCE_REVIEW_DATA</script><script>/*SOURCE_REVIEW_JS*/</script></body></html>

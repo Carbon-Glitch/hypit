@@ -33,7 +33,6 @@ other layers will follow,
 [voice direction](../playbooks/craft/voice-direction.md) for casting and directing a character's voice,
 [voice and performance](../playbooks/craft/voice-and-performance.md) for A-roll and recurring voices,
 [B-roll](../playbooks/craft/b-roll.md) for coverage,
-[screen demonstrations](../playbooks/craft/screen-demonstrations.md) when an interface carries evidence or explanation,
 [Caption](../playbooks/craft/captions.md) for speech-linked text, and
 [graphic composition](../playbooks/craft/graphic-compositions.md) for designed visual hierarchy,
 with [motion graphics](../playbooks/craft/motion-graphics.md) for changes within it.
@@ -173,8 +172,7 @@ submitting the same paid media requests again. The following examples locate the
 | Cue grouping, word attributes or display-only Dual wording changes without changing speech tokens | The accepted SemanticTakes | The current CaptionDocument and its presentation |
 | Take placement or complete Timeline extent changes | The prepared local Takes | Timeline assembly, all affected projections and presentation |
 | Only some B-roll images must change | The existing performance, voice and all other still-useful media | The deliberately replaced images and their downstream composition |
-| The presenter changes while the spoken argument still fits | Unaffected B-roll, icons, music and other media that still serve the target | The new presenter images, affected performances, their normalization and semantic timing, and downstream composition |
-| A new product changes the demonstration or claims | Views and media whose content still fits the new Treatment | The affected product views, performance, Script-dependent timing and visual treatment |
+| The character changes while the spoken argument still fits | Unaffected B-roll, icons, music and other media that still serve the target | The new character images, affected performances, their normalization and semantic timing, and downstream composition |
 | The same video needs different normalization or semantic timing | Its generated video Output, or normalized media when that still applies | The affected normalization or alignment and downstream consumers |
 | New spoken wording requires a new performance | Unaffected Takes and other still-useful inputs | The changed performance and the timing derived from it |
 
@@ -192,8 +190,8 @@ old Take to new speech.
 Do not satisfy a changed Track or final composition with its old rendered Output, which would hide
 the current edit. Type compatibility alone cannot establish that an old performance or timing still fits.
 
-After a person or product swap, review existing Candidate selections against the new target. A Run
-that still selects the old presenter's Take will keep that person on screen even after the image
+After a character or key-prop change, review existing Candidate selections against the new target. A Run
+that still selects the old character's Take will keep that person on screen even after the image
 prompt changes. Preserve unrelated work while selecting or generating the media the adaptation needs.
 
 For example, correcting three wrong B-roll selections means replacing those selections while keeping

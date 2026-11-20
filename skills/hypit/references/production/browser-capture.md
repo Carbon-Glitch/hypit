@@ -1,112 +1,25 @@
-# Capturing websites and authored HTML
+# Capturing story screens and authored graphic assets
 
-Read this when a page, product interface or locally authored HTML should become captured picture
-material. [Screen demonstrations](../playbooks/craft/screen-demonstrations.md) owns what the screen
-must show and why; this page owns how to save that material. `hypit capture` supplies browser
-capture from the installed Distribution; the project's scripts describe the actual page interactions.
-A captured image or recording enters the composition through Media, while an editable demonstration
-can use a project component. [Spatial layout](spatial.md) owns fitting either into its destination.
+Use this only when the storyboard needs a readable message, evidence display or authored title/effect asset. The full target storyboard owns what is revealed and when; the saved image or rendered layer owns its actual pixels. Existing accepted assets are reused.
 
-## Save a page or region
+## Capture a screen or local graphic
+
+Use the available browser/capture path to save the specific story-required state. If the installed Distribution provides the existing capture interface, these are examples:
 
 ```bash
-hypit capture screenshot https://example.com/product \
-  --viewport 540x960 --scale 2 --full-page --to assets/product-page.png
+hypit capture screenshot ./assets/story-message.html \
+  --viewport 540x960 --scale 2 --to assets/story-message.png
 
-hypit capture screenshot https://example.com/product \
-  --selector '#comparison' --to assets/comparison.png
-
-hypit capture screenshot ./assets/card.html \
-  --viewport 1080x300 --transparent --to assets/card.png
+hypit capture screenshot ./assets/title-card.html \
+  --viewport 1080x300 --transparent --to assets/title-card.png
 ```
 
-Use `--clip x,y,width,height` for a rectangular region in CSS pixels. A selector, clip or full-page
-capture chooses a different extent; the default captures the viewport. Viewport and device scale
-are separate: 540 × 960 at scale 2 produces a 1080 × 1920 viewport image. They are task choices;
-Puppeteer's device emulation is available in a script when mobile behavior or a user agent matters.
+Use actual supplied text, precise font resources and the accepted palette. Make the required clue readable at the final shot's scale without revealing later information. Open the saved file and inspect the glyphs, intended state, crop and alpha; a successful command alone does not prove the image suits the shot. Check the locally installed help before using interface options.
 
-The command waits for page load. `--wait-for <selector>` waits for a visible element, and `--wait-ms`
-adds a chosen delay. If content loads through scrolling or interaction, express that in a script.
-Watch the saved image to see whether it contains the intended evidence and is readable in its
-destination Frame.
+An exact text/screen asset enters H3 through the existing image asset route when it belongs physically in the scene. Its perspective, contact, reflections and occlusion must fit the actual shot. A precise screen-space graphic or title instead enters [post production](editing-and-finishing.md#图形艺术字与调色) as an accepted image or rendered transparent layer; use the existing HyperFrames path for animation.
 
-## Use ordinary page interactions
+## Place and verify
 
-For several captures, lazy loading, an authenticated page or a demonstration, put the actual
-interactions in a project `.mjs` file. This script needs no Puppeteer import:
+Keep the actual file with project assets and record its story role in the existing asset entry. Preserve the adopted frame's perspective and spatial state; use [media placement](media-presentation.md) or the current EDIT overlay interface. Source time and final display time remain distinct.
 
-```js
-// scripts/capture-product.mjs
-export const options = {
-  launch: { defaultViewport: { width: 1280, height: 720, deviceScaleFactor: 1 } },
-};
-
-export default async ({ page, screenshot, record, args, log }) => {
-  const [url, destination] = args;
-  await page.goto(url);
-  await page.waitForSelector('#comparison', { visible: true });
-  await screenshot({ path: 'assets/comparison.png', selector: '#comparison' });
-
-  log('Recording the product interaction');
-  const recording = await record({ path: destination, fps: 30 });
-  await page.click('#show-example');
-  await page.waitForSelector('#example-result', { visible: true });
-  await recording.stop();
-};
-```
-
-```bash
-hypit capture run scripts/capture-product.mjs -- \
-  https://example.com/product assets/product-demo.mp4
-```
-
-The selectors above describe an example page; choose the real controls and meaningful start and end
-states of the page being captured. Use normal Puppeteer navigation, locators, input and evaluation
-to express the task. `browser` is also available for opening more pages; pass one as the second
-argument to `screenshot` or `record` to capture it. Returning finishes open recordings and closes
-the browser. Completed captures survive a later script failure.
-
-For a scrolling demonstration, identify the container that actually scrolls; a gallery may move
-inside a fixed page. Record the intended interaction and compare separated saved frames to confirm
-that the page's rows or states actually change. Crop and presentation can then be revised around
-this recording without repeating the capture.
-
-For local inputs beside the script, `new URL('../assets/card.html', import.meta.url).href` locates
-the file. Relative output paths follow the directory where the command runs. `args` contains the
-arguments after `--`; use `log` for progress. `--json` reports every completed helper output with its
-path and actual dimensions, plus recorded duration and frame rate. Output paths must be new.
-
-## Browser and recording choices
-
-Use an installed compatible browser or prepare the package's tested browser once with
-`hypit capture install-browser`. Installation uses Puppeteer's browser cache and leaves existing
-browsers in place. [Network preparation](../environment/local-tools.md#make-network-preparation-practical)
-explains diagnosing a slow download. The package manifest owns the recommended version. For an explicit alternate selection, use
-`--browser-version <exact-version>` and `--browser-cache <directory>` on both preparation and capture.
-`install-browser --browser-download-base-url <url>` selects a compatible archive source for that
-installation only, with no source fallback. Capture never installs the missing browser.
-`--channel chrome` selects an installed Chrome;
-`--browser <executable>` selects another explicit compatible path. `--headed` opens a visible
-window. The script's `options.launch` accepts ordinary Puppeteer launch options, including a chosen
-`userDataDir` when a dedicated persistent browser profile is useful. CLI browser options override
-the script's choices. `--timeout-ms` sets page operation and navigation timeouts.
-
-Native page recordings require Chrome 153 or later, supplied by `install-browser`. They produce MP4;
-use an `.mp4` destination. `record({ path, audio: true })` includes page audio when the demonstration
-needs it; the default captures picture only. The browser performs encoding. `ffprobe` on `PATH`
-reads the saved file's actual dimensions and duration; `options.ffprobePath` can select another
-executable. `record` accepts Puppeteer's `RecordOptions`, including `fps` / `frameRate` as a maximum
-capture rate and `maxWidth` / `maxHeight` for output dimensions. Music, narration and effects added
-in the edit remain ordinary authored audio layers. The helper sets maximum dimensions from the
-viewport's device-pixel dimensions; Chrome determines the recorded size. Device scale can enlarge
-a screenshot without enlarging the recording. Use the saved video's reported dimensions when
-placing it in the composition.
-
-## Place the captured material
-
-Keep captures in project assets and record the source page and its purpose in the project notes.
-An image enters through `media:Image`; a recording enters through `media:Video` and the ordinary
-[normalization path](media.md). Place them with
-[Media presentation](media-presentation.md#keep-display-time-and-source-playback-distinct) and the Script's
-Selections or Moments as appropriate. Their visibility, crop, scroll and transitions belong to the
-composition, so those changes can reuse the captured file.
+Inspect the final composite at delivery size: legibility, reveal timing, position, perspective/occlusion, color, alpha and whether it hides faces or important action. Adjust only the affected graphic or shot. No new document or capture task is required when existing material already meets the story need.

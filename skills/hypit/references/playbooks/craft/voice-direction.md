@@ -1,99 +1,56 @@
-# Directing a voice
+# Directing a dramatic voice
 
-Read this before choosing, designing or changing a character's voice, including when adapting a
-production with an existing Voice Reference. Cast a voice the audience will want to keep hearing.
-For creator-led social video, favor a distinctive, engaging presence that makes the words feel
-addressed to someone.
+Read before choosing or changing a character's voice. [Sound direction](../../creation/sound-direction.md) owns the scene's audience experience and hearing perspective; DESIGN/existing character facts own vocal identity; the current story owner (full STORYBOARD for ordinary recreation, literary body when used) owns words and key vocal actions. STORYBOARD owns performed timing and actual input duties.
 
 ## Cast the person through the sound
 
-Imagine a voice worth hearing: who is speaking, whom they are addressing, and what makes the sound
-appealing for this character. A playful little creature with a sweet, bright voice or a storyteller
-with a rounded, resonant voice suggests sound as well as personality. A role such as founder or
-creator supplies context; still choose what this particular person sounds like. "An unexpected
-voice" describes its relationship to the casting. Name the appealing sound chosen for that
-relationship so the voice model has a vocal character to realize.
+Choose a voice that embodies this character's social world, relationships and contradictions. Describe audible language/accent, pitch range, resonance/weight, grain/breath, articulation and rhythm where they matter. A demographic label or “pleasant” voice cannot establish identity. A commanding person may speak softly to control a listener; a bright voice may make a threat more unsettling. Avoid prescribing beauty, youth, authority or restraint as universal qualities.
 
-As in [Image direction](image-direction.md#two-ideas-behind-every-sentence), use high-level
-language that carries sensory information, then make the decisive qualities specific. "Magnetic"
-states the desired appeal; a clear, youthful tone and nimble, teasing phrasing begin to express it.
-Pitch, vocal weight, brightness, softness or grain are casting choices, not interchangeable words
-for a good voice. A lightly husky voice has a particular texture; choose it when that texture belongs
-to the person. Let the intended encounter guide the presence, from a lively recommendation to an
-intimate conversation.
+Compare relevant cast voices by listening. They should be distinguishable for this drama without all becoming caricatures. Keep each current accepted profile and actual sample/version in CHARACTERS/ASSETS, linked from Treatment. A changed look does not automatically change a person's voice; an intentional voice/body transformation has an explicit scope and story reason.
 
-Look at the character reference and use the Brief to make the casting choice. A supplied voice can
-establish an exact identity. An existing project's voice can continue that identity when its casting
-still serves the new piece. For a new person or character, develop the voice that makes this role
-worth following. Keep the casting choice and the reference's role in Treatment and Source.
+## 特殊语音：源听审到角色表演
+
+方言、口音、特殊音区和戏剧化腔调可能是人物辨识与卖点载体。第一次真实听审顺带分析，不给每句再开专项调用：
+
+| 特征 | 记录的可听事实与边界 |
+| --- | --- |
+| 方言/口音 | 语言、发音/用词/语气词例证、浓淡和变换；短句或遮蔽不足以定地域时未知，不根据字幕/身份猜；保留实际方言词，不自动普通话化 |
+| 特殊音区/质地 | 相对高/中/低或超低的听感、厚薄、明暗、沙哑/气声/鼻腔色彩与共鸣；音区不等于音量，未经测量不编Hz |
+| 表演腔调 | 先写尖细、假声、咬字、拖腔、收尾和节奏等特征，再解释“太监腔”等戏剧标签；不由声音推定职业、身份或生理状态，不把所有高音写为同一种腔调 |
+| 标志性声音行为 | 笑声、叹气、口癖、特殊断句与重复方式，发生触发和所承担的幽默、威压、反差或余韵；无作用的呼吸不强造卖点 |
+| 表演与声音处理 | 区分稳定声线、本句策略及疑似降调/低频增强/失真/混响；仅听混轨不能确认制作技术或干净stem时明确未知 |
+
+当前Agent沿现有events.auditory_detail、shots.delivery、summary.observations/unknowns记录实际证据；GPT据此把跨镜稳定特征汇入`SOURCE_CONTEXT.records.voice_profiles`，关联角色/匿名说话者、媒体版本、听审区间和未知。profile只保留可辨声音要点与出处，不复制逐句转录或整份听审报告；源表`声音表演`列引用其ID并写本镜变化。声音参与卖点的部分进入原有保真义务。没有实际听证的特征不填为源事实。
+
+目标DESIGN人物声音段/已有角色档案选择保留或有依据转译；26列目标表的完整台词、语气重音停顿呼吸、导演意图和成功条件承接具体发声，不加列。H3正文用可执行声音描述并绑定实际支持的参考样本；样本存在不等于已上传/已生效。特殊声线保持可辨，但讨好、惊恐、愤怒或低语应有不同表演。
+
+生成后在实际candidate/邻镜/成片听审中比较口音、音区、腔调、笑声及功能是否存活，检查跨镜漂移和变速/降噪/混音损失。错误表演优先局部H3修复，不靠EQ、随意升降调冒充方言或重新表演。换语言/声线时明确保住何种体验，不承诺精确克隆。旧报告未覆盖的重要特征按[专项补听](../../production/gemini-audio-review.md)只查有关短段，不另写人物声音文档或新增审批。
 
 ## Compress the voice into a vivid direction
 
-A useful voice description is often one short paragraph: a recognizable vocal character, the sound
-qualities that make it appealing, and a characteristic way of addressing someone. Age and gender
-presentation, language or accent, pitch, texture and articulation can sharpen that impression.
-Choose the few that settle the casting; this is not a field list to fill out. Cultural or character
-shorthand earns its place through the sound it evokes.
+State stable vocal identity separately from the passage's tactic. “A low, slightly rough voice with unhurried phrasing” is identity; “he tries to make her stay without admitting he needs her” is playable strategy. Specify only consequential stress, hesitation, breaths, volume/distance changes and the release after a line. Mood adjectives alone cannot carry a reversal or the listener's understanding.
 
-Translate the character's role in the piece into audible qualities. Wanting the viewer to trust a
-claim can inform clear articulation and thoughtful emphasis; the request should carry that chosen
-sound and manner of speaking. Music, graphic reveals and the later mix receive their own direction.
-[Direction and its inputs](../../production/system.md#give-each-part-the-direction-it-can-realize)
-explains this relationship between the whole design and the individual request.
-
-For example:
+For example, fictional scene direction:
 
 ```text
-A young woman's sweet, clear voice with a bright upper register and a light, smooth tone.
-Conversational American English, nimble and playful, like a friend excited to let you in on a find.
-Her curiosity lifts a question; an audible smile gives her confident answers warmth.
+Identity: a clear mid-low voice, slight dry grain, conversational English and measured phrasing.
+Action: he tries to sound casual while asking her to stay; the first word comes too quickly,
+he briefly regains composure, and the last phrase softens as he waits for her answer.
+The same voice persists when he becomes relieved; do not replace it with a different sweet timbre.
 ```
 
-A different character can have a different kind of appeal:
-
-```text
-A mature man's rounded, resonant mid-low voice with clear, relaxed British English. He sounds
-thoughtful and approachable, carefully weighing an idea with someone across the table. Measured
-phrasing and purposeful emphasis give his judgments conviction.
-```
-
-The first direction chooses a light, playful appeal; the second chooses warmth and considered
-conviction. Vocal pitch and delivery pace do different work: a high voice can be unhurried, and a
-low voice can speak nimbly. Preserve the qualities that define the casting while choosing the
-language and delivery density the actual work needs.
+Another character's quick, crisp delivery might mask fear rather than indicate confidence. Write what the person is trying to achieve with their listener, and which audible change exposes that effort. No gesture, gasp or sob quota applies.
 
 ## Let the sample carry the character
 
-When choosing or designing a sample, prefer the performed language and a delivery compatible with
-the new piece when available. A sample carries pronunciation and phrasing cues as well as timbre;
-cross-language identity transfer does not by itself establish the target accent or cadence. Preserve
-a supplied identity and direct those target-language qualities explicitly in the requests.
+Prefer accepted material in the performed language when available. A sample contains accent/prosody as well as timbre; cross-language resemblance is not proof of target-language delivery. Choose material with clear identity and the intended character, excluding accidental score/other speakers/heavy echo unless that relationship is deliberately being referenced.
 
-Choose a short, natural line that gives the intended voice room to show itself. A curious question
-followed by a pleased response can demonstrate a lively character: "Wait, you did all that with one
-photo? Okay, now you've got my attention." A considered observation can suit the second casting.
-The line should make the intended manner useful to the thought, rather than merely name the product.
-Write the intended pronunciation for unfamiliar names in Script before using the line as a sample.
+Reuse an accepted sample, extract a suitable passage from already accepted H3 audio, or create a sample through a configured, authorized voice service or H3 audition. Voice Design/Clone are options only when actually available and needed, not automatically installed requirements. Draft samples and provisional auditions remain labeled until heard and accepted for their duty. Check key emotional delivery in the relevant scene; a neutral sample does not accept every future performance.
 
-Voice Design turns that short line into a reusable Voice Reference. A speaking-video model can use
-it while performing the finished Script; a passage built around independent narration can use the
-same reference through Voice Clone. The casting line and the finished passage have different jobs.
-[Voice and performance](voice-and-performance.md#give-a-recurring-person-one-accepted-voice) owns
-reference preparation, reuse and that performance choice; the selected model's package documentation
-owns its exact inputs.
+Follow [voice/performance](voice-and-performance.md#carry-one-accepted-voice-into-varied-acting) and [real audio inputs](../../production/request-controls.md#carry-audio-intent-into-actual-inputs). Bind actual uploaded bytes to the named speaker when the selected RunningHub operation supports it. A sample file, prose label or serialized `None` does not transfer the sound to the model. Timbre reference, signal reuse and exact speech drive require separate capability evidence.
 
 ## Let one voice express different thoughts
 
-The reference carries vocal identity and demonstrates a manner of speaking. Each finished passage
-has its own reason to be spoken: draw someone in, challenge a claim, become delighted by an example,
-or deliver a confident verdict. Direct those attitudes through the video performance or the selected
-speech model's available inputs while keeping the same person recognizable. One accepted voice can
-express different thoughts; recurring identity does not require one fixed emotional state throughout
-the work.
+Vocal identity stays recognizable while the character questions, conceals, provokes, reassures or loses control. Timing comes from read/performance and actual aligned media, with time for listening and action. Do not flatten a whispered secret, an interruption or broad comedic delivery merely to make generation easier; choose feasible H3 blocks/coverage preserving the essential response.
 
-[Video direction](video-direction.md#direct-the-reason-for-an-action) connects that attitude to gaze,
-gesture and interaction. For independent speech, the Script and supported speech-model inputs shape
-delivery. Choose time from this intended performance using
-[Script measurement](../../creation/script-and-time.md#measure-before-choosing-durations).
-The pace estimate sizes the passage; the voice and performance direction give it character. Fast
-speech alone does not establish emphasis, changing attitude or expressive intonation.
+[Video direction](video-direction.md#direct-the-reason-for-an-action) relates voice to gaze, posture and interaction; [script measurement](../../creation/script-and-time.md#measure-before-choosing-durations) sizes the passage; [sound/mix](sound-mix.md) retains space, cues and quiet through the final scene. Actual listening settles cast continuity and expressive delivery.

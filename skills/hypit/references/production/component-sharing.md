@@ -135,7 +135,7 @@ release to install.
 A Prompt Kit can export an `.svs` Source through ordinary package `exports` without activation code:
 
 ```xml
-<import as="ugc" source="@studio/image-kits/phone-ugc-v1"/>
+<import as="drama" source="@studio/image-kits/drama-look-v1"/>
 ```
 
 That reads the selected package data. The same packing, installation, versioning, and file-completeness

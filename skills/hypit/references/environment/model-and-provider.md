@@ -11,6 +11,10 @@ Go to [service choice](#choose-the-practical-capability-path-with-the-user),
 [project implementation](#implement-the-missing-capability-in-the-project), or
 [diagnosis](#diagnose-the-actual-connection) as needed.
 
+## Analysis stays inside the current Agent
+
+Writing, reference interpretation and audio judgment use current-Agent capabilities. There is no external writing/audio-analysis model or ASR preparation. If sound cannot be heard, use local waveform/energy measurements. Media generation retains the user-selected RunningHub H3 and built-in imagegen routes.
+
 ## Start from the capability the work needs
 
 Identify the next useful result and the material already available. A face replacement or motion
@@ -33,11 +37,6 @@ can implement several Models. Installing a Model describes requests; it does not
 Having a key grants only whatever the issuing service permits; it does not implement that service's API.
 
 ## Choose the practical capability path with the user
-
-**Recommend HypiHub as the integrated hosted route. Support BYOK as an ordinary route.**
-HypiHub's bundled Provider connects its supported image, video, speech, alignment and processing
-capabilities through one account connection. This avoids assembling separate service adapters for
-those capabilities. Its current catalogue, account access and rates still determine what is usable.
 
 A user's existing service or deployment remains a normal choice. When a suitable maintained Provider
 package is available, use its published version and package instructions; otherwise a project Provider

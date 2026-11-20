@@ -71,17 +71,17 @@ can become a timed video through Media Pipeline's ordinary `still-video` Fragmen
 
 ```svrun
 <import as="media" from="@hypit/media-pipeline@1"/>
-<fragment id="product-hold" using="media:still-video">
+<fragment id="scene-hold" using="media:still-video">
   <input name="duration" value="5"/>
   <input name="clock" from="clock"/>
-  <input name="layout" from="product-layout"/>
-  <input name="source-0" from="product-image"/>
+  <input name="layout" from="scene-layout"/>
+  <input name="source-0" from="scene-image"/>
 </fragment>
-<satisfy output="product-clip.video" candidate="product-hold.video"/>
+<satisfy output="scene-clip.video" candidate="scene-hold.video"/>
 ```
 
-Here `product-layout` is an Author value of Type `@hypit/media-pipeline@1#StillVideoLayout`,
-containing `{"weights":[1]}`; `product-image` is an authored image Blob. The package README owns the
+Here `scene-layout` is an Author value of Type `@hypit/media-pipeline@1#StillVideoLayout`,
+containing `{"weights":[1]}`; `scene-image` is an authored image Blob. The package README owns the
 Fragment's exact inputs. [Media](media.md#give-a-still-a-duration-when-that-is-its-role) shows the
 simpler `StillVideo` Surface for authoring this directly in the Source.
 
@@ -90,22 +90,24 @@ installed package. `from` on an input names a public value of the Run's Author e
 computed Output. The latter retains its own dependencies and any Candidate selection. It does not
 name another Run Candidate or automatically expose an imported Source's private bindings.
 
-The resulting Candidate is named `product-hold.video`. Selecting it replaces the computation at
-`product-clip.video` while retaining the preparation and composition that consume that video.
+The resulting Candidate is named `scene-hold.video`. Selecting it replaces the computation at
+`scene-clip.video` while retaining the preparation and composition that consume that video.
 
 ## Generate material while composing
 
 Media requests depend on the Script, direction, references and requested duration. Once those
 choices are ready and the commission covers their cost, a Run can target the prepared Takes while
-component and Recipe work continues. Shared decisions such as where a presenter leaves room for
+component and Recipe work continues. Shared decisions such as where a character leaves room for
 an overlay belong in Treatment. Translate the material side into visible camera facts for image
 and video direction; pass the composition side as actual layout and event inputs. Independent
 requests can run while their downstream components are authored.
 
 The small [production Source](examples/production.svml), [Recipe](examples/look.svs),
 [material Run](examples/material.svrun) and [production Run](examples/production.svrun) illustrate
-these execution choices. Copy them together into a project. The simple performance request shows
-system wiring; the work's actual casting, references and direction come from its Treatment and Craft.
+these execution choices using an already accepted H3 shot. Copy them together and supply
+`assets/accepted-h3-shot.mp4` with matching literary/compiled dialogue. The example illustrates
+preparation, timing and rendering; it does not submit a generation request or include media.
+The target casting, references and direction come from the five documents and Treatment.
 
 `material.svrun` targets `opening-semantic.take`. While it runs, the author can work on the title and
 its placement. Once the Take completes, select it with `build-record` in the production Run so that

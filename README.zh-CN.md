@@ -1,3 +1,5 @@
+> **Carbon-Glitch 定制版：** 当前 Agent 直接创作/分析的定制 Skill 位于 [skills/hypit](skills/hypit/README.md)。安装：`npx skills add Carbon-Glitch/hypit --skill hypit -g`。下方保留上游 Runtime 与示例介绍。
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./docs/public/hypit-logo-light.svg">
